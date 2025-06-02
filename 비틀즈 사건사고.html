@@ -1,0 +1,290 @@
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by parkseungbinbeen (http://jsbin.com/rubawaf/27/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Beatles Times</title>
+  <style>
+    body {
+      background-color: #111;
+      margin: 0;
+      padding: 40px 0;
+      font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background-color: #e8e8e8;
+      padding: 0 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header {
+      border-bottom: 2px solid black;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 6rem;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .reporter {
+      text-align: right;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .newspaper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 30px 0;
+    }
+
+    .article {
+      padding: 10px;
+      border-bottom: 1px solid #bbb;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .article.wide {
+      grid-column: span 4;
+      border-bottom: 2px solid #aaa;
+      margin-bottom: 20px;
+    }
+
+    .article img {
+      width: 100%;
+      margin: 10px 0;
+      filter: grayscale(100%);
+    }
+
+    .article h3 {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 5px;
+    }
+
+    .article strong {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 6px;
+      color: #000;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      border-top: 2px solid black;
+      padding: 30px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .member-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-top: 1px solid #aaa;
+      background-color: #e8e8e8;
+      border-radius: 8px;
+    }
+
+    .member-box img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      border-radius: 4px;
+    }
+
+    .member-box p {
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .member-box strong {
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .chronicle-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    .chronicle-entry {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .chronicle-entry img {
+      width: 100px;
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(100%);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>THE BEATLES TIMES</h1>
+      <p>Liverpool, Monday May 27, 2025</p>
+    </header>
+
+    
+      <!-- 사건 연대기 -->
+      <section class="article wide">
+        <h2>The Beatles Incident News</h2>
+        <p><em>Chronicle of Moments That Changed History</em></p>
+        <p class="reporter">By Seungbin Park</p>
+
+        <div class="chronicle-grid">
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>July 15, 1958</h3>
+                <strong>John Lennon's Mother Dies</strong>
+                <p>Julia Lennon died in a car accident, which deeply impacted young John and influenced later songs like "Julia".</p>
+              </div>
+              <img src="https://i.imgur.com/60bRc9S.jpg">
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>August 17, 1960</h3>
+                <strong>The Beatles Begin First Hamburg Shows</strong>
+                <p>Their time in Hamburg was filled with tough conditions, arrests, and various incidents during club performances.</p>
+              </div>
+              <img src="https://i.imgur.com/uu6jfql.png">
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>March 4, 1966</h3>
+                <strong>“More Popular Than Jesus”</strong>
+                <p>John Lennon’s comment led to protests and record burnings in the U.S. after being reprinted in <em>Datebook</em>.</p>
+              </div>
+              <img src="https://i.imgur.com/R2cbWK0.jpg">
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>August 27, 1967</h3>
+                <strong>Brian Epstein Dies</strong>
+                <p>The Beatles’ manager passed away from an overdose, leaving the group with uncertainty and shifting leadership.</p>
+              </div>
+              <img src="https://i.imgur.com/9GNt1tI.jpg">
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>April 10, 1970</h3>
+                <strong>Breakup Announcement</strong>
+                <p>Paul McCartney confirmed The Beatles’ breakup, shocking fans and the press across the globe.</p>
+              </div>
+              <img src="https://i.imgur.com/3DAPzqg.jpg">
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>December 8, 1980</h3>
+                <strong>John Lennon Assassinated</strong>
+                <p>Mark David Chapman shot Lennon outside the Dakota Building in NYC, sending shockwaves worldwide.</p>
+              </div>
+              <img src="https://i.imgur.com/grVrRWQ.jpg">
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>November 29, 2001</h3>
+                <strong>George Harrison Dies After Cancer Battle (Age 58)</strong>
+                <p>George passed away after a long battle with cancer, leaving fans heartbroken and in mourning.</p>
+              </div>
+              <img src="https://i.imgur.com/BM2L9XA.jpg">
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="chronicle-entry">
+              <div>
+                <h3>November 2, 2023</h3>
+                <strong>Final Beatles Song Released</strong>
+                <p>“Now and Then” completed with AI using Lennon’s demo, marks the official last song by the band.</p>
+              </div>
+              <img src="https://i.imgur.com/q6DZClW.jpg">
+            </div>
+          </div>
+        </div>
+      </section>
+
+     
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="member-box">
+          <img src="https://i.imgur.com/AXJA9Et.jpeg" alt="John Lennon">
+          <p><strong>John Lennon</strong>Born: Oct 9, 1940</p>
+        </div>
+        <div class="member-box">
+          <img src="https://i.imgur.com/8iWTyZo.jpeg" alt="Paul McCartney">
+          <p><strong>Paul McCartney</strong>Born: June 18, 1942</p>
+        </div>
+        <div class="member-box">
+          <img src="https://i.imgur.com/DsIkDYu.jpeg" alt="George Harrison">
+          <p><strong>George Harrison</strong>Born: Feb 25, 1943</p>
+        </div>
+        <div class="member-box">
+          <img src="https://i.imgur.com/MpNnLVr.jpeg" alt="Ringo Starr">
+          <p><strong>Ringo Starr</strong>Born: July 7, 1940</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
