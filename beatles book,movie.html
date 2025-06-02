@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by duyi99 (http://jsbin.com/domuzom/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Books & Movies about The Beatles</title>
+  <style>
+    body {
+      background-color: #111;
+      margin: 0;
+      padding: 0px 0;
+      font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: auto;
+      background-color: #e8e8e8;
+      padding: 0 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header {
+      border-bottom: 2px solid black;
+      padding: 20px 0;
+    }
+
+    header img {
+      width: 150px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 6rem;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .newspaper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      padding: 30px 0;
+    }
+
+    .article {
+      padding: 10px;
+    }
+
+    .article img {
+      width: 100%;
+      margin: 10px 0;
+      filter: grayscale(100%);
+    }
+
+    .article.wide {
+      grid-column: span 4;
+      border-bottom: 2px solid #aaa;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #c4302b;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #c4302b;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: #eee;
+    }
+
+    .card-content {
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    .card p {
+      margin: 0.3rem 0;
+    }
+
+    .card .label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    footer {
+      border-top: 2px solid black;
+      padding: 30px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .member-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-top: 1px solid #aaa;
+      background-color: #e8e8e8;
+      border-radius: 8px;
+    }
+
+    .member-box img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      border-radius: 4px;
+    }
+
+    .member-box p {
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .member-box strong {
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <img src="https://i.namu.wiki/i/1wrniyKolGynnZiomchrMCO2oH0wMsTcIDp3JgN1YUUv-LSW7cffm6Ao6Qa1CgoBLXi406PEtDeQOKXjVox85nATDLVnojFqfRoQBJMxcgiVeeIiU51AGK7LFWAuXl3-6k1hcw-R6Kcb1VcVwjlX6A.svg" alt" alt="The Beatles Logo">
+    <p>Liverpool, Monday May 27, 2025 (BEATLES BOOK & MOVIE)</p>
+  </header>
+
+  <section>
+    <h2>📚 Top 5 Books About The Beatles</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9780811836364.jpg" alt="The Beatles Anthology">
+        <div class="card-content">
+          <h3>The Beatles Anthology</h3>
+          <p><span class="label">Author:</span> The Beatles</p>
+          <p>The official autobiography directly contributed by the Beatles themselves, one of the most authoritative books about them.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/e6/Revolution_in_the_Head.jpg" alt="Revolution in the Head">
+        <div class="card-content">
+          <h3>Revolution in the Head</h3>
+          <p><span class="label">Author:</span> Ian MacDonald</p>
+          <p>A scholarly analysis of all Beatles recordings, highly praised by critics.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ebayimg.com/images/g/HQIAAOSwdANmWmhP/s-l1600.jpg" alt="Tune In">
+        <div class="card-content">
+          <h3>Tune In</h3>
+          <p><span class="label">Author:</span> Mark Lewisohn</p>
+          <p>A detailed biography by a Beatles expert, the first in a planned trilogy.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Thebeatlesthebiography.jpg" alt="The Beatles: The Biography">
+        <div class="card-content">
+          <h3>The Beatles: The Biography</h3>
+          <p><span class="label">Author:</span> Bob Spitz</p>
+          <p>A comprehensive biography and New York Times bestseller.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://www.gnbooks.co.uk/wp-content/uploads/2024/04/With-the-Beatles-9781914227691-600px1.jpg" alt="With The Beatles">
+        <div class="card-content">
+          <h3>With The Beatles</h3>
+          <p><span class="label">Author:</span> Patrick Humphries</p>
+          <p>The first full biography in 20 years, featuring unreleased interviews with Paul, George, and Ringo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎬 Top 5 Films About The Beatles</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://i.namu.wiki/i/PqJtDduGAC3C95LiGB_ZvnSSft5ysguUnqjgcNhNPXVTOQEX4SZCC9Qkd6WV3vDkG3QUlyF_eq6o-hjLaEIi2iiPH2SHhQUPcMv9yecduj7Ia42q-ITBoa4Lbs-GkFSkoiIbTA9-N3gXNY5V6mYZ1Q.webp" alt="Beatles '64">
+        <div class="card-content">
+          <h3>Beatles '64</h3>
+          <p><span class="label">Year:</span> 2024</p>
+          <p><span class="label">Director:</span> Martin Scorsese (Producer)</p>
+          <p>A documentary about the Beatles' visit to the US, released on Disney+ on November 29, 2024.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.namu.wiki/i/rU7T2CSpLdx0WlZElnEIIc1MDR3BZgrxwwp9PZhMmy2vYK15yN7ArikEwWrIY6XzYKyekyaXFl--awjAg1Y2w6blAn3iZQFqxq681CT6QhMR-sBq0C9iP6mzEWef6XfUSpayc03uKCefGmjjaJohng.webp" alt="Let It Be">
+        <div class="card-content">
+          <h3>Let It Be</h3>
+          <p><span class="label">Year:</span> 1970</p>
+          <p><span class="label">Director:</span> Michael Lindsay-Hogg</p>
+          <p>The original Beatles film, exclusively released on Disney+ on May 8, 2024.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.namu.wiki/i/GDK5suR7IfIkbJGcElZ1DBpVHhemP5nqx8yLWfIBaG2Niv4diLxFTqmB-4g-Y18dceh0_8HtKqT-iDNTUN6y4gyWh5Ot-qvmIHSLC7D7hIs3uP_6enf1RdwEM2ha_3iEVyimAm4fFA0h9WbWnS-cyw.webp" alt="A Hard Day's Night">
+        <div class="card-content">
+          <h3>A Hard Day's Night</h3>
+          <p><span class="label">Year:</span> 1964</p>
+          <p><span class="label">Director:</span> Richard Lester</p>
+          <p>The Beatles’ first feature-length film, a classic musical movie.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/ko/2/2f/헬프%21_포스터.jpg" alt="Help!">
+        <div class="card-content">
+          <h3>Help!</h3>
+          <p><span class="label">Year:</span> 1965</p>
+          <p><span class="label">Director:</span> Richard Lester</p>
+          <p>The Beatles’ second color film, playful and experimental in style.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/91/TheBeatles-GetBackposter.png" alt="The Beatles: Get Back">
+        <div class="card-content">
+          <h3>The Beatles: Get Back</h3>
+          <p><span class="label">Year:</span> 2021</p>
+          <p><span class="label">Director:</span> Peter Jackson</p>
+          <p>A 3-part Disney+ documentary focusing on the Beatles’ rehearsals and creative process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="member-box">
+        <img src="https://i.imgur.com/AXJA9Et.jpeg" alt="John Lennon">
+        <p><strong>John Lennon</strong>Born: Oct 9, 1940</p>
+      </div>
+      <div class="member-box">
+        <img src="https://i.imgur.com/8iWTyZo.jpeg" alt="Paul McCartney">
+        <p><strong>Paul McCartney</strong>Born: June 18, 1942</p>
+      </div>
+      <div class="member-box">
+        <img src="https://i.imgur.com/DsIkDYu.jpeg" alt="George Harrison">
+        <p><strong>George Harrison</strong>Born: Feb 25, 1943</p>
+      </div>
+      <div class="member-box">
+        <img src="https://i.imgur.com/MpNnLVr.jpeg" alt="Ringo Starr">
+        <p><strong>Ringo Starr</strong>Born: July 7, 1940</p>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
+
