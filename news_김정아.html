@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by yeonmi257 (http://jsbin.com/wedekuw/16/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <title>The Beatles Times</title>
+  <style>
+    body {
+      background-color: #111; /* 검정 배경 */
+      margin: 0;
+      padding: 40px 0;
+      font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background-color: #e8e8e8; /* 신문지 느낌의 회색 */
+      padding: 0 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header {
+      border-bottom: 2px solid black;
+      padding: 20px 0;
+    }
+
+   header h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 6rem;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+    header p {
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .newspaper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      padding: 30px 0;
+    }
+    
+    .img1 {max-width: 660px;
+      grid-column: span 2;
+           margin-bottom: 15px;
+        justify-self: center;
+
+}
+
+    .article1 {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+    .article1 h2 {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+}
+    .article1 p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: justify;
+}
+    
+        .article3 {
+  grid-column: span 3;
+  display: grid;
+  justify-content: center;
+  padding: 10px;
+}
+    .article3 h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+    .article3 p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: justify;
+}
+    
+            .article4 {
+  grid-column: span 1;
+  grid-row: span 3;            
+  display: grid;
+  padding: 20px;
+  border: solid black 1px;            
+}
+    .article4 h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+    .article4 ol{font-size: 1rem;
+    line-height:1.5rem}
+    
+    
+    .article4 p {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
+  text-align: justify;
+}
+    
+                .article5 {
+  grid-column: span 1;  
+                  grid-row: span 2;
+  display: grid;
+  padding: 20px;          
+}
+    .article5 h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+    .article5 p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: justify;
+}
+
+    .article6 {
+  grid-column: span 2;
+      grid-row: span 1;
+  display: grid;
+  padding: 20px;          
+}
+    .article6 h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+    .article6 p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: justify;
+}
+
+    .img2 {min-width: 300px;
+      grid-column: span 2;
+  grid-row: span 1;            
+  display: grid;
+      justify-self: center;
+}
+
+
+    h2, h3 {
+      margin: 0 0 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      border-top: 2px solid black;
+      padding: 30px 0;
+    }
+
+   .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+  .member-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-top: 1px solid #aaa;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+}
+
+  .member-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border-radius: 4px;
+}
+
+    .member-box p {
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .member-box strong {
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>THE BEATLES TIMES</h1>
+      <p>Liverpool, Monday May 27, 2025</p>
+    </header>
+
+    <main class="newspaper">
+      
+     
+              <img class="img1" src="https://visla.kr/wp/wp-content/uploads/2023/11/20231103_00.jpg" alt="The Beatles"/>
+
+      <section class="article1">
+
+        <h2>Who is The Beatles?</h2>
+        <p>
+          In 1956, John Lennon formed a skiffle group called The Quarrymen with friends from Quarry Bank High School in Liverpool. On July 6, 1957, Paul McCartney joined the band, and in 1958, George Harrison became the lead guitarist. By 1960, the band had begun performing in Hamburg and adopted the name “The Beatles” In February 1964, The Beatles appeared on The Ed Sullivan Show, captivating around 73 million viewers. Soon after, they occupied the top five spots on the Billboard Hot 100—a record still unbeaten today. Their success led the way for the "British Invasion," paving the path for other UK bands in the American market.
+          The Beatles influenced not only music but also fashion, art, and societal attitudes. With their long hair, unique clothing, and openness in expression, they became symbols of 1960s youth culture and significantly boosted the global image of British culture.
+      </section>
+     
+
+      <section class="article3">
+        <h3>Their Musical Experimentation and Achivements</h3>
+        <p>
+          The Beatles, alongside producer George Martin, revolutionized studio recording, treating the studio itself as an instrument. They pioneered techniques such as multitrack recording, tape loops, reverse effects, and the inclusion of Indian instruments. Their 1967 album Sgt. Pepper's Lonely Hearts Club Band is considered a landmark concept album that elevated pop music into an art form
+        The Beatles have sold over 600 million records globally, making them the best-selling band in history. They hold 20 Billboard No. 1 singles and 19 No. 1 albums. They also received a Grammy Lifetime Achievement Award (2014) and have been inducted into the Grammy Hall of Fame multiple times.
+        </p>
+      </section>
+
+      <section class="article4">
+        <h3>5 Interesting and Fun Facts About The Beatles</h3>
+        <ol>
+          <li><b>Ringo Starr was not the original drummer!</b>
+          <p>The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today.</p>
+          </li>
+          <li><b>The name “The Beatles” is a pun!</b>
+          <p>The band’s name is a play on words, combining “beetle” (the insect) with “beat” (as in music rhythm).</p>
+          </li>
+          <li><b>None of the Beatles could read music!</b>
+          <p>John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music.</p>
+          </li>
+          <li><b>In 1967, The Beatles did the world’s first satellite TV broadcast!</b>
+          <p>Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World.</p> 
+          </li>
+          <li><b>The “Paul is dead” conspiracy theory!</b>
+          <p>In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to “clues” hidden in album covers and lyrics to support the theory.</p>
+          </li>  
+        </ol>
+      </section>
+      
+<section class="article5">
+        <h3>The Beatles' Breakup and Its Aftermath</h3>
+        <p>The Beatles rose to global fame in the 1960s but officially disbanded in 1970. Their breakup began with the sudden death of manager Brian Epstein in 1967, which disrupted the band’s internal balance and direction.
+
+They created Apple Corps but faced major disagreements over management. Paul clashed with the others over who should lead. Creative differences also widened—John leaned toward experimental, political music while Paul preferred classic pop. George and Ringo often felt sidelined.
+
+John Lennon’s relationship with Yoko Ono added tension to the group dynamic. After releasing their final album Abbey Road in 1969, John privately expressed his intent to leave. In 1970, Paul publicly announced his departure, officially ending the band.
+
+Despite the breakup, all four members continued successful solo careers. The Beatles’ legacy remains one of the most influential in music history.
+
+
+          
+        </p>
+    </section>
+      <section class="article6">
+        <h3>Key Albums and Musical Evolution</h3>
+        <p>In their later years, The Beatles evolved through bold experimentation and genre expansion. Their 1966 album Revolver is hailed as a psychedelic rock milestone, with "Tomorrow Never Knows" showcasing groundbreaking techniques like tape loops and reverse recording. George Harrison's "Love You To" reflects strong Indian musical influences with sitar and tabla. The 1968 double LP The Beatles (commonly called the White Album) featured an eclectic mix of rock, folk, reggae, and avant-garde, highlighting each member’s individuality. Their final recorded album, Abbey Road (1969), is known for its seamless medley on the B-side, creating a narrative-like flow. The last track, "The End," symbolizes their collaborative spirit, including Ringo Starr’s only drum solo and rotating guitar solos from the other members. These albums mark The Beatles’ transformation from pop sensations into icons of musical innovation.</p>
+    
+
+      
+      </section>
+      
+      <img class="img2" src="https://cdn.bnuepress.com/news/photo/202312/876_824_5836.png">
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="member-box">
+          <img src="https://i.imgur.com/AXJA9Et.jpeg" alt="John Lennon">
+          <p><strong>John Lennon</strong>Born: Oct 9, 1940</p>
+        </div>
+        <div class="member-box">
+          <img src="https://i.imgur.com/8iWTyZo.jpeg" alt="Paul McCartney">
+          <p><strong>Paul McCartney</strong>Born: June 18, 1942</p>
+        </div>
+        <div class="member-box">
+          <img src="https://i.imgur.com/DsIkDYu.jpeg" alt="George Harrison">
+          <p><strong>George Harrison</strong>Born: Feb 25, 1943</p>
+        </div>
+        <div class="member-box">
+          <img src="https://i.imgur.com/MpNnLVr.jpeg" alt="Ringo Starr">
+          <p><strong>Ringo Starr</strong>Born: July 7, 1940</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
+
