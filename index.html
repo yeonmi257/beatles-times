@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<meta name="robots" content="noindex">
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>The Beatles Times</title>
   <style>
     body {
-      background-color: #111; /* 검정 배경 */
+      background-color: #111;
       margin: 0;
       padding: 40px 0;
       font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
@@ -19,6 +18,18 @@
       background-color: #e8e8e8;
       padding: 0 30px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .headline {
+      border-bottom: 2px solid #222;
+      padding: 30px 0 20px;
+      text-align: center;
+    }
+
+    .headline h2 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 0;
     }
 
     header {
@@ -39,7 +50,6 @@
       text-align: center;
     }
 
-    /* 상단 두 열 */
     .top-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -47,7 +57,6 @@
       margin: 30px 0;
     }
 
-    /* 하단 세 열 */
     .bottom-row {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -55,33 +64,36 @@
       margin-bottom: 30px;
     }
 
-    /* 박스 전체를 클릭 가능한 링크로 */
+    .box img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      filter: grayscale(100%);
+    }
+
     a.box {
       display: block;
-      background-color: #fff;
-      border: 2px solid #111;
       padding: 15px;
-      min-height: 200px; /* 원하는 높이로 조정 */
+      min-height: 200px;
       box-sizing: border-box;
       text-decoration: none;
       color: inherit;
       position: relative;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
     }
+
     a.box:hover {
       background-color: #f5f5f5;
     }
 
-    a.box .content {
-      /* 내부 콘텐츠 영역 */
-    }
-
-    /* 기타 스타일 (푸터 포함) */
     .Italic {
       font-style: italic;
-      border-top: 4px solid black;
-      border-bottom: 4px solid black;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
       padding: 5px 0;
       text-align: center;
+      line-height: 1.6;
     }
 
     footer {
@@ -126,56 +138,65 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <header>
       <h1>THE BEATLES TIMES</h1>
       <p>Liverpool, Monday May 27, 2025</p>
     </header>
 
+    <section class="headline">
+      <h2>The Beatles in Focus: Five Historic Vignettes</h2>
+    </section>
+
     <main>
-      <!-- 상단 두 열 -->
       <div class="top-row">
-        <!-- 첫 번째 박스: 새 탭으로 page1.html -->
         <a href="yeonmi.html" class="box" target="_blank" rel="noopener noreferrer">
           <div class="content">
-            <h3>첫 번째 박스 제목</h3>
-            <p>여기에 원하는 텍스트나 이미지를 넣으세요. 클릭하면 page1.html이 새 탭에서 열립니다.</p>
+            <h1>The Beatles Revolutionized Modern Music</h1>
+            <img src="https://i.namu.wiki/i/8KpMolLEE2uIZ2n2XaLH86SfzHiTeayLsv0ItfcwcvtAMknBUkM2WD7WBNqvMMaZG1b5vTO_Ty1GIKaGNfizQw.webp">
+            <h3>The Beatles’ Triad of Greatness: A Look at Three Iconic Records</h3>
+            <p>From the groundbreaking experimentation of “Revolver” to the sonic unity of “Sgt. Pepper’s Lonely Hearts Club Band,” and the introspective brilliance of the “White Album,” these three records stand as enduring pillars of the Beatles’ musical journey. Each album not only shaped a generation, but also redefined what popular music could be—bold, artistic, and timeless.</p>
           </div>
         </a>
 
-        <!-- 두 번째 박스: 새 탭으로 page2.html -->
         <a href="page2.html" class="box" target="_blank" rel="noopener noreferrer">
           <div class="content">
-            <h3>두 번째 박스 제목</h3>
-            <p>여기에 원하는 텍스트나 이미지를 넣으세요. 클릭하면 page2.html이 새 탭에서 열립니다.</p>
+            <h2>Where Memory Begins, Beyond the Quiet Fields of Strawberry Dreams, In the Whisper of Time’s Gentle Embrace</h2>
+            <img src="https://cdn.mos.cms.futurecdn.net/8cDFSqYPgT6CLTeKrY5e3A-1200-80.jpg">
+            <div class="Italic">
+              <p>“It was a sort of happy place for me.”<br>- John Lennon -</p>
+            </div>
+            <h3>Where the Echoes Remain: Finding the Beatles in the Places They Left Behind</h3>
+            <p>Though the Beatles have long departed the stage, their spirit continues to echo through the cobbled streets and quiet parks of Liverpool, casting a timeless shadow over the city that shaped them. Their melodies may no longer ring out from concert halls, but they live on in the places they once walked, laughed, and dreamed. From the nostalgic charm of Penny Lane to the red gates of Strawberry Field, each landmark serves as a living archive—a piece of the puzzle that made up the Fab Four’s legendary journey.</p>
           </div>
         </a>
       </div>
 
-      <!-- 하단 세 열 -->
       <div class="bottom-row">
-        <!-- 세 번째 박스: 새 탭으로 page3.html -->
         <a href="page3.html" class="box" target="_blank" rel="noopener noreferrer">
           <div class="content">
-            <h4>하단 첫 번째 박스</h4>
-            <p>클릭하면 page3.html이 새 탭에서 열립니다.</p>
+            <h2>Books & Movies<br>about The Beatles</h2>
+            <img src="https://mccartney.com/wp-content/uploads/2021/12/86810-1-1-680x365_c.jpg">
+            <h3>Ten Echoes of the Beatles: Books and Films That Keep the Legacy Alive</h3>
+            <p>Though the Beatles have long stepped off the world stage, their story continues to be told—through pages and frames that capture the depth of their artistry, struggles, and cultural impact. From moving biopics and revealing documentaries to insightful biographies and critical essays, these ten works offer a deeper understanding of the band that changed music forever. They do not merely recount history; they invite us to feel the pulse of a revolution.</p>
           </div>
         </a>
 
-        <!-- 네 번째 박스: 새 탭으로 page4.html -->
         <a href="page4.html" class="box" target="_blank" rel="noopener noreferrer">
           <div class="content">
-            <h4>하단 두 번째 박스</h4>
-            <p>클릭하면 page4.html이 새 탭에서 열립니다.</p>
+            <h2>The Beatles<br>Incident News</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBddTnNccXuAUt6rGgx3UGs4uTPIt0X_FceA&s">
+            <h3>Scandals and Shadows: The Untold Turmoil Behind the Beatles’ Brilliance</h3>
+            <p>Behind the harmonious melodies and chart-topping fame, the Beatles' journey was marked by internal rifts, public controversies, and personal struggles. From the infamous “bigger than Jesus” backlash to the tensions that unraveled their final days as a band, these moments shaped not only their music but also the mythos that surrounds them. Examining these incidents offers a more human portrait of the Fab Four—flawed, fiery, and enduringly fascinating.</p>
           </div>
         </a>
 
-        <!-- 다섯 번째 박스: 새 탭으로 page5.html -->
         <a href="page5.html" class="box" target="_blank" rel="noopener noreferrer">
           <div class="content">
-            <h4>하단 세 번째 박스</h4>
-            <p>클릭하면 page5.html이 새 탭에서 열립니다.</p>
+            <h2>The Beatles:<br>Who Were They?</h2>
+            <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_3892,h_2189,x_0,y_541/images/GettyImages/mmsport/mentalfloss/01hp2pf7t5swpy53tef3">
+            <h3>The Lives Behind the Legend: Tracing the Beatles’ Journey from Liverpool to the World</h3>
+            <p>From the cobbled streets of Liverpool to the global stage, the Beatles rose not only as musicians, but as cultural icons who redefined a generation. The lives of John, Paul, George, and Ringo were marked by relentless creativity, restless exploration, and a bond that reshaped the language of modern music. This is the story of four young men whose rhythms and dreams echoed far beyond their time.</p>
           </div>
         </a>
       </div>
@@ -202,6 +223,5 @@
       </div>
     </footer>
   </div>
-
 </body>
 </html>
