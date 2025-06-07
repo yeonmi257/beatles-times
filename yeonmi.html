@@ -1,16 +1,9 @@
 <!DOCTYPE html>
-<!--
-Created using JS Bin
-http://jsbin.com
-
-Copyright (c) 2025 by yeonmi257 (http://jsbin.com/dohosij/67/edit)
-
-Released under the MIT license: http://jsbin.mit-license.org
--->
-<meta name="robots" content="noindex">
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
   <title>The Beatles Times cg</title>
   <style>
     body {
@@ -20,6 +13,10 @@ Released under the MIT license: http://jsbin.mit-license.org
       font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
       color: #111;
     }
+    
+   html:lang(ko) body {
+  font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', serif;
+}
 
     .container {
       max-width: 1200px;
@@ -29,9 +26,9 @@ Released under the MIT license: http://jsbin.mit-license.org
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     }
 
-    header {
-      border-bottom: 2px solid black;
+    header, footer {
       padding: 20px 0;
+      border-bottom: 2px solid black;
     }
 
     header h1 {
@@ -41,134 +38,84 @@ Released under the MIT license: http://jsbin.mit-license.org
       text-align: center;
     }
 
-    header p {
+    header p, .headline .meta {
       font-size: 1rem;
       font-style: italic;
       text-align: center;
+      color: #444;
     }
 
-    /* --------------------------- MAIN --------------------------- */
-
     .section-divider {
-  border-top: 1px solid #aaa;
-  width: 100%;
-  margin: 20px 0;
-}
-    
+      border-top: 1px solid #aaa;
+      margin: 20px 0;
+    }
+
     .headline {
-      border-bottom: 1px solid #222;
       padding: 30px 0 20px;
       text-align: center;
+      border-bottom: 1px solid #222;
     }
 
     .headline h2 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: bold;
-      margin: 0;
     }
 
-    .headline .meta {
-      font-size: 0.9rem;
-      color: #444;
-      margin-top: 5px;
+    .main-grid, .three-col, .footer-grid {
+      display: grid;
+      gap: 30px;
     }
 
     .main-grid {
-      display: grid;
       grid-template-columns: 2fr 1.5fr;
-      gap: 30px;
       padding: 40px 0;
       border-bottom: 1px solid #aaa;
     }
 
-    .main-article h2 {
-      font-size: 4rem;
-      margin: 10px;
-    }
-
-     .main-article h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      margin-top: 10px;
-    }
-    
-    .main-article p {
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
-    .main-image {
-      width: 100%;
-      aspect-ratio: 1 / 1; /* 정사각형으로 변경 */
-      object-fit: cover;
-      background-color: #ccc;
-      border: 1px solid #999;
-      filter: grayscale(100%);
-      margin-top: 20px;
-    }
-    
-    
-    .column-text {
-  column-count: 2;
-  column-gap: 40px;
-}
-
-
     .three-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
       padding: 40px 0;
     }
 
-    .article {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .article h3 {
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 2px 0;
-    }
-
-    .square-image {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border: 1px solid #222;
-      margin-bottom: 10px;
-      filter: grayscale(100%);
-    }
-
-    .article.columns p {
-      column-count: 2;
-      column-gap: 20px;
-    }
-    
-    .article.columns h4 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-   .full-poster {
-  width: 100%;
-  object-fit: cover;
-  border: 1px solid #222;
-  filter: grayscale(100%);
-}
-    
-    /* --------------------------- FOOTER --------------------------- */
-
-    footer {
-      border-top: 2px solid black;
-      padding: 30px 0;
-    }
-
     .footer-grid {
-      display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+    }
+    
+    .main-article h2 {
+      font-size: 4rem;
+      margin: 10px 0;
+    }
+
+    .main-article h3, .article h3, .article.columns h4 {
+      font-size: 2rem;
+      margin: 10px 0 20px;
+    }
+
+    .main-article p, .article p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .column-text, .article.columns p {
+      column-count: 2;
+      column-gap: 40px;
+    }
+
+    .main-image, .square-image, .full-poster, .member-box img {
+      width: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      border: 1px solid #222;
+    }
+
+    .main-image, .square-image {
+      aspect-ratio: 1 / 1;
+      margin-bottom: 10px;
+    }
+
+    .full-poster {
+      border: 1px solid #222;
     }
 
     .member-box {
@@ -176,16 +123,14 @@ Released under the MIT license: http://jsbin.mit-license.org
       align-items: center;
       gap: 12px;
       padding: 10px;
-      border-top: 1px solid #aaa;
       background-color: #e8e8e8;
       border-radius: 8px;
+      border-top: 1px solid #aaa;
     }
 
     .member-box img {
       width: 80px;
       height: 80px;
-      object-fit: cover;
-      filter: grayscale(100%);
       border-radius: 4px;
     }
 
@@ -199,28 +144,131 @@ Released under the MIT license: http://jsbin.mit-license.org
       display: block;
       margin-bottom: 4px;
     }
+
+    a.image-hover-wrapper {
+      display: inline-block;
+    }
+
+    a.image-hover-wrapper img {
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    a.image-hover-wrapper:hover img {
+      filter: grayscale(100%) brightness(70%);
+    }
+
+  .fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: none;
+}
+    
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+
+      .headline h2, .main-article h2 {
+        font-size: 2.5rem;
+      }
+
+      .main-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .column-text, .article.columns p {
+        column-count: 1;
+       
+      }
+
+      .three-col {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .member-box {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .member-box img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .main-article h3, .article h3, .article.columns h4 {
+        font-size: 1.5rem;
+      }
+
+      .main-article p, .article p {
+        font-size: 0.9rem;
+      }
+
+      .main-image, .square-image, .full-poster {
+        aspect-ratio: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="button">
+  <button onclick="toggleLanguage()">English</button>
+</div>
     <header>
       <h1>THE BEATLES TIMES</h1>
       <p>Liverpool, Monday May 27, 2025</p>
     </header>
 
-    <section class="headline">
-      <h2>The Beatles Revolutionized Modern Music</h2>
+    <section class="headline fade-in-section">
+         <h2 data-en="The Beatles Revolutionized Modern Music" data-ko="비틀즈는 현대 음악을 혁신했다">The Beatles Revolutionized Modern Music</h2>
+    </section>
     
     </section>
 
-    <section class="main-grid">
+    <section class="main-grid fade-in-section">
       <div class="main-article">
+         <a href="https://youtu.be/SQgDYT836Kk?si=aVrkoFPJvpddfHMX" target="_blank" class="image-hover-wrapper">
         <img src="https://i.namu.wiki/i/8KpMolLEE2uIZ2n2XaLH86SfzHiTeayLsv0ItfcwcvtAMknBUkM2WD7WBNqvMMaZG1b5vTO_Ty1GIKaGNfizQw.webp" alt="Abbey Road" class="main-image" />
-         <h2>Abbey Road 1969</h2>
+        </a>
+           <h2>Abbey Road 1969</h2>
         <div class="section-divider"></div>
-        <h3>The Beatles’ Swan Song: A Masterpiece That Defined an Era</h3>
+        <h3 data-en="The Beatles’ Swan Song: A Masterpiece That Defined an Era" data-ko="The Beatles’ Swan Song: 시대를 정의한 명반">The Beatles’ Swan Song: A Masterpiece That Defined an Era</h3>
         <div class="column-text">
-        <p>
+        <p data-en="Released in 1969 as their 11th studio album, Abbey Road marks the final recording by The Beatles and remains one of the most iconic album covers in music history. With timeless tracks like Come Together and I Want You (She’s So Heavy), the album showcases the band's creative peak.
+
+George Harrison, often the quiet force behind the Fab Four, shines with the critically acclaimed Something and the radiant optimism of Here Comes the Sun. But it's the B-side medley—from the ethereal harmonies of Because to the climactic The End—that stands as the album’s crowning jewel. A seamless musical journey, this medley weaves together themes of farewell, unity, and artistic closure.
+
+Abbey Road is not just an album—it's a statement, a farewell, and a final triumph that continues to echo across generations.<br><br>
+          Despite its polished sound, Abbey Road was born in a time of inner turmoil. The Beatles were no longer the unified force they once were—creative tensions and personal differences loomed large. Yet, in a final act of cohesion, they returned to EMI Studios with producer George Martin, determined to create something worthy of their legacy. The result was a meticulously crafted work that blended innovation with nostalgia. From the pioneering use of the Moog synthesizer to the warmth of analog tape, the album fused technical brilliance with emotional depth. Decades later, Abbey Road still resonates—not only as a symbol of the end, but as proof that even in parting, greatness can be achieved.
+          Its influence is felt in countless artists who followed, echoing the balance of experimentation and melody.
+The cover photo alone has become a cultural landmark, endlessly imitated across the world.
+More than half a century later, Abbey Road remains a quiet revolution—one final walk that never truly ended."
+ data-ko="1969년, 비틀즈는 11번째 정규 앨범 Abbey Road를 발표했다. 이 앨범은 그들의 마지막 녹음 작품이자, 음악사에서 가장 상징적인 커버 이미지 중 하나로 기억된다. 런던 애비 로드 스튜디오 앞 횡단보도를 건너는 네 사람의 뒷모습은 전 세계 대중문화 속에 깊이 자리 잡았고, 수록곡들은 밴드의 정점에 있었던 창작력을 유감없이 보여준다. Come Together, *I Want You (She’s So Heavy)*는 그 대표적인 예다.
+
+조지 해리슨은 Something, Here Comes the Sun을 통해 조용한 존재감에서 벗어나, 멜로디와 감정을 모두 갖춘 송라이터로 자리매김했다. 두 곡 모두 오늘날까지 사랑받는 클래식으로 남아 있으며, 그의 음악적 성숙을 증명한다. 특히 앨범 후반에 수록된 메들리는 Because부터 The End까지 이어지며 하나의 곡처럼 흐른다. 이 구성은 단순한 트랙 나열을 넘어서, 이별과 화합, 마무리라는 주제를 예술적으로 녹여냈다.
+
+하지만 이 앨범이 완성되기까지의 과정은 순탄치 않았다. 멤버들 간의 긴장감은 최고조에 달했고, 팀은 사실상 해체를 향해 가고 있었다. 그런 상황 속에서도 멤버들은 다시 스튜디오에 모여, 마지막 작품만큼은 최고의 결과물을 남기자는 데 뜻을 모았다. 프로듀서 조지 마틴은 다시 지휘봉을 잡았고, 그 결과는 비틀즈다운 완성도와 실험정신이 공존하는 앨범으로 이어졌다.
+
+기술적으로도 Abbey Road는 당시 기준으로 매우 진보적이었다. 모그 신시사이저의 도입은 새로운 음향 세계를 열었고, 아날로그 녹음 특유의 따뜻하고 입체적인 사운드는 앨범 전체에 깊이를 더했다. 디지털 시대가 도래하기 직전, 아날로그 시대의 마지막 거장작으로서의 의미도 크다.
+
+수십 년이 지난 지금까지도 Abbey Road는 수많은 뮤지션들에게 영향을 주고 있다. 사운드의 완성도, 구성의 짜임새, 감정의 흐름 모두가 여전히 생생하게 살아 있으며, 그 영향력은 오늘날의 팝과 록 음악 속에서도 쉽게 찾아볼 수 있다.
+
+Abbey Road는 단순한 마지막 작품이 아니었다. 그것은 비틀즈라는 이름으로 남긴 마지막 녹음이자, 끝을 향한 걸음 속에서도 위대한 예술이 어떻게 탄생할 수 있는지를 보여주는 증거였다. 네 사람이 건넌 그 횡단보도는 단순한 이미지가 아니라, 여전히 현재를 지나 미래로 이어지는 발자국이 되었다."       >
           Released in 1969 as their 11th studio album, Abbey Road marks the final recording by The Beatles and remains one of the most iconic album covers in music history. With timeless tracks like Come Together and I Want You (She’s So Heavy), the album showcases the band's creative peak.
 
 George Harrison, often the quiet force behind the Fab Four, shines with the critically acclaimed Something and the radiant optimism of Here Comes the Sun. But it's the B-side medley—from the ethereal harmonies of Because to the climactic The End—that stands as the album’s crowning jewel. A seamless musical journey, this medley weaves together themes of farewell, unity, and artistic closure.
@@ -234,10 +282,23 @@ More than half a century later, Abbey Road remains a quiet revolution—one fina
         </div>
       </div>
       
-      <div class="main-article">
+      <div class="main-article fade-in-section">
         
 <div class="column-text">
-  <p>
+  <p data-en="It was supposed to be a return to roots—a raw, honest look at The Beatles as a band. Instead, <em>Let It Be</em> became a document of disintegration.<br><br> Released in May 1970, just weeks after Paul McCartney publicly announced the group’s breakup, the album arrived like a postscript to a legendary story that had already ended. Its cover, stark and divided into four solo portraits, hinted at the emotional distance behind the scenes. The music inside told a similar story: fragmented, uneven, but deeply human.<br><br>
+
+Let It Be was originally envisioned as a back-to-basics project called Get Back. The idea was simple—no overdubs, no studio tricks, just the band playing together live. But the reality was far more complicated. The sessions, filmed for a documentary, captured growing tensions and uncomfortable silences. George Harrison briefly quit. John Lennon seemed increasingly detached. And Paul McCartney, pushing to keep things on track, came off as controlling to the others. Still, the music survived. Songs like Across the Universe, Two of Us, and Let It Be carried emotional weight, stripped of polish but not power.<br><br>
+
+The final version was reworked by producer Phil Spector, who added orchestral arrangements and choral overdubs—choices that remain divisive among fans and the band members themselves. McCartney, in particular, objected to the lush production of The Long and Winding Road. Yet despite, or perhaps because of, its imperfections, Let It Be stands as a poignant farewell. It is not the sound of a band at its peak, but of one coming undone—with beauty, regret, and grace all tangled together. In the end, it didn’t bring them back. But it left behind something real: a final, flawed, and unforgettable goodbye.
+" data-ko="원래 Let It Be는 초심으로 돌아가는 앨범이 될 예정이었다. 군더더기 없는 연주, 꾸밈없는 사운드—비틀즈 본연의 모습을 담겠다는 취지였다. 그러나 결과는 달랐다. 이 앨범은 밴드가 서서히 무너져가는 과정을 기록한 유서처럼 남았다.
+
+1970년 5월, 폴 매카트니가 공식적으로 탈퇴를 선언한 지 불과 몇 주 만에 앨범은 발매되었다. 이미 끝난 이야기의 덧붙임처럼 다가온 이 작품은, 커버부터 의미심장했다. 네 명의 멤버가 각자 흩어진 초상으로 분할된 디자인은 그들의 거리감을 그대로 보여준다. 음악 역시 마찬가지였다. 완성도는 들쑥날쑥했지만, 그 속에는 여전히 인간적인 진심이 묻어났다.
+
+초기 프로젝트의 이름은 Get Back이었다. 화려한 스튜디오 작업 없이, 실제 연주만으로 앨범을 만들자는 기획이었다. 하지만 현실은 녹록지 않았다. 촬영이 병행된 녹음 세션에서는 긴장감과 침묵이 자주 흘렀고, 조지 해리슨은 한때 밴드를 떠나기도 했다. 존 레논은 점점 무심해졌고, 폴 매카트니는 방향을 잡으려 애쓰다 독단적으로 비춰졌다. 그럼에도 음악은 살아남았다. Across the Universe, Two of Us, Let It Be 같은 곡들은 꾸밈은 덜했지만 감정은 선명했다.
+
+이후 프로듀서 필 스펙터는 앨범을 새롭게 편집하며 현악기와 코러스를 덧입혔다. 이러한 선택은 팬들과 멤버들 사이에서도 의견이 갈렸다. 특히 매카트니는 The Long and Winding Road의 과한 편곡에 강하게 반대했다. 그럼에도, 혹은 그 때문에, Let It Be는 결함 속에서도 강한 여운을 남긴다. 이 앨범은 절정의 순간이 아니라 붕괴의 시간 속에서, 아름다움과 후회, 그리고 체념이 뒤엉킨 작별의 기록이다.
+
+되돌림은 없었다. 하지만 이별의 순간, 비틀즈는 진짜를 남겼다. 불완전했지만, 그래서 더욱 잊히지 않는 마지막 인사였다.">
    It was supposed to be a return to roots—a raw, honest look at The Beatles as a band. Instead, <em>Let It Be</em> became a document of disintegration.<br><br> Released in May 1970, just weeks after Paul McCartney publicly announced the group’s breakup, the album arrived like a postscript to a legendary story that had already ended. Its cover, stark and divided into four solo portraits, hinted at the emotional distance behind the scenes. The music inside told a similar story: fragmented, uneven, but deeply human.<br><br>
 
 Let It Be was originally envisioned as a back-to-basics project called Get Back. The idea was simple—no overdubs, no studio tricks, just the band playing together live. But the reality was far more complicated. The sessions, filmed for a documentary, captured growing tensions and uncomfortable silences. George Harrison briefly quit. John Lennon seemed increasingly detached. And Paul McCartney, pushing to keep things on track, came off as controlling to the others. Still, the music survived. Songs like Across the Universe, Two of Us, and Let It Be carried emotional weight, stripped of polish but not power.<br><br>
@@ -246,40 +307,51 @@ The final version was reworked by producer Phil Spector, who added orchestral ar
     
      </p>
 </div>
-      <h2>Let It Be 1970</h2>
+       <h2>Let It Be 1970</h2>
         <div class="section-divider"></div>
-        <h3>Let It Be: A Fragmented Farewell Etched in Harmony</h3>
-      <img src="https://i.namu.wiki/i/BbhhiIhw04k3PXFkBnRks87IpP40Y5TNYSAsqbYtQOIsVUMHQR3hXfoJNLBYXXs3mLe1NEXqYmCOZt35o6kK1A.webp" alt="Abbey Road Portrait" class="main-image" />
-      </div>
+        <h3 data-en="Let It Be: A Fragmented Farewell Etched in Harmony" data-ko="Let It Be: 조화 속에 새겨진 단절의 작별">Let It Be: A Fragmented Farewell Etched in Harmony</h3>
+        <a href="https://youtu.be/CGj85pVzRJs?si=jZ3ZE88NsJlbafew" target="_blank" class="image-hover-wrapper">
+      <img src="https://i.namu.wiki/i/BbhhiIhw04k3PXFkBnRks87IpP40Y5TNYSAsqbYtQOIsVUMHQR3hXfoJNLBYXXs3mLe1NEXqYmCOZt35o6kK1A.webp" alt="let it be" class="main-image" />
+        </a>
+          </div>
         </section>
 
-    <section class="three-col">
+    <section class="three-col fade-in-section">
       
 
       <div class="article">
+        <a href="https://youtu.be/xwwABrNLvFs?si=3OsCMZHDKSFqtAFG" target="_blank" class="image-hover-wrapper">
         <img src="https://i.namu.wiki/i/yX0NFUfTSLpITijIR-UGVTmIG6w4mgZyyLR0BXt3kTe45pr2eFOZ4nPE4RSQhFLUbtmVRc6ggTaWV6lewoWrvCZoInifB7ZqG3AbAysF1-BEdVYZpQ0ewo6VqLlPRddpDlEko8lCiRuCwPyrlLu6MZtskKkaI8U7pOy-vgpX1Ow.webp" alt="SGt" class="square-image" />
-        <h3>Sgt. Pepper's Lonely Hearts Club Band 1967</h3>
-        <p>
-          Sgt. Pepper’s Lonely Hearts Club Band redefined the album format with bold concepts, experimental sounds, and a legacy that reshaped popular music.
-        </p>
+        </a>
+           <h3>Sgt. Pepper's Lonely Hearts Club Band 1967</h3>
+        <p data-en="Sgt. Pepper’s Lonely Hearts Club Band redefined the album format with bold concepts, experimental sounds, and a legacy that reshaped popular music."
+           data-ko="Sgt. Pepper’s Lonely Hearts Club Band는 대담한 콘셉트와 실험적인 사운드로 앨범의 형식을 새롭게 정의했고, 대중음악의 흐름을 바꿔놓은 유산을 남겼다.">Sgt. Pepper’s Lonely Hearts Club Band redefined the album format with bold concepts, experimental sounds, and a legacy that reshaped popular music.</p>
       </div>
 
-      <div class="article columns">
-        <h4>A Technicolor Revolution: Inside Sgt. Pepper’s Legacy</h4>
-        <p>
-       When Sgt. Pepper’s Lonely Hearts Club Band was released in June 1967, it wasn’t just another Beatles album—it was a cultural explosion. Dressed in psychedelic military uniforms, the band abandoned their mop-top image and embraced full-blown studio experimentation. The result was a groundbreaking concept album that challenged every convention of pop music.
+      <div class="article columns fade-in-section">
+        <h4 data-en="A Technicolor Revolution: Inside Sgt. Pepper’s Legacy" data-ko="테크니컬러 혁명: 페퍼 상사의 유산">A Technicolor Revolution: Inside Sgt. Pepper’s Legacy</h4>
+        <p data-en="In June 1967, The Beatles changed the course of pop music with Sgt. Pepper’s Lonely Hearts Club Band. Dressed in psychedelic military uniforms, they introduced a bold concept album framed as a theatrical performance by a fictional band, moving far beyond the conventions of rock at the time.
 
-Rather than a collection of unrelated songs, Sgt. Pepper’s played like a unified performance by a fictional band. From the brassy fanfare of the title track to the haunting final notes of A Day in the Life, the album blended rock, classical, Indian music, and avant-garde techniques into one seamless experience.
+Produced by George Martin, the record fused tape loops, orchestral arrangements, Indian instruments, and experimental studio techniques to create a rich, immersive listening experience. Its vivid cover, featuring a collage of cultural icons, became a symbol of 1960s counterculture. More than 50 years later, Sgt. Pepper’s remains one of the most influential and groundbreaking albums in music history."
+           data-ko="1967년 6월, 비틀즈는 Sgt. Pepper’s Lonely Hearts Club Band를 통해 팝 음악의 흐름을 바꿔놓았다. 사이키델릭 군복을 입고 등장한 이들은, 가상의 밴드가 공연하는 콘셉트 앨범이라는 새로운 형식을 선보이며 당시 록의 틀을 완전히 벗어났다.
 
-Produced by George Martin, the record made full use of the studio as an instrument—layering tape loops, orchestral swells, and backward recordings into a lush, immersive soundscape. It was bold, surreal, and unapologetically ambitious.<br><br>
-The album’s cover, featuring a collage of cultural icons and vivid colors, became as iconic as the music itself. Sgt. Pepper’s didn’t just redefine The Beatles—it redefined what pop music could aspire to be. More than 50 years later, it remains a high-water mark of creativity, imagination, and fearless reinvention.
-        </p>
+프로듀서 조지 마틴과 함께 만든 이 앨범은 테이프 루프, 오케스트라 편곡, 인도 악기, 다양한 실험적 기법이 어우러진 풍부하고 몰입감 있는 사운드를 담아냈다. 수많은 문화 아이콘을 모은 화려한 커버 디자인은 1960년대 반문화의 상징이 되었다.
+
+반세기가 지난 지금도 Sgt. Pepper’s는 음악 역사상 가장 혁신적이고 영향력 있는 앨범으로 남아 있다.">
+          In June 1967, The Beatles changed the course of pop music with Sgt. Pepper’s Lonely Hearts Club Band. Dressed in psychedelic military uniforms, they introduced a bold concept album framed as a theatrical performance by a fictional band, moving far beyond the conventions of rock at the time.
+
+Produced by George Martin, the record fused tape loops, orchestral arrangements, Indian instruments, and experimental studio techniques to create a rich, immersive listening experience. Its vivid cover, featuring a collage of cultural icons, became a symbol of 1960s counterculture. More than 50 years later, Sgt. Pepper’s remains one of the most influential and groundbreaking albums in music history.
+
+
+       </p>
       </div>
       
-      <div class="article">
+      <div class="article fade-in-section">
+        <a href="http://aladin.kr/p/sRn75" target="_blank" class="image-hover-wrapper">
   <img src="https://i.pinimg.com/736x/e7/f5/3a/e7f53a0ec207abc0c144bad1d5cd89ec.jpg" 
        alt="A Hard Day's Night Poster" 
        class="full-poster" />
+        </a>
 </div>
     </section>
 
@@ -304,7 +376,42 @@ The album’s cover, featuring a collage of cultural icons and vivid colors, bec
       </div>
     </footer>
   </div>
+ 
+<script>
+  let isKorean = false;
+
+  function toggleLanguage() {
+    const elements = document.querySelectorAll('[data-en][data-ko]');
+    const targetLang = isKorean ? 'en' : 'ko';
+    
+    elements.forEach(el => {
+      el.innerText = el.getAttribute(`data-${targetLang}`);
+    });
+
+   
+    const button = document.querySelector('.button button');
+    button.textContent = isKorean ? 'English' : '한국어';
+
+   
+    document.documentElement.lang = targetLang;
+
+    isKorean = !isKorean;
+  }
+  
+  const fadeElems = document.querySelectorAll('.fade-in-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // 🔁 다시 숨김 처리
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeElems.forEach(el => observer.observe(el));
+</script>
+  
 </body>
 </html>
-
-
