@@ -1,277 +1,418 @@
 <!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by yeonmi257 (http://jsbin.com/wedekuw/16/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
   <title>The Beatles Times</title>
-  <style>
-    body {
-      background-color: #111; /* 검정 배경 */
-      margin: 0;
-      padding: 40px 0;
-      font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
-      color: #111;
-    }
+  
+</head>
+  
+<style>
+  body {
+    background-color: #111;
+    margin: 0;
+    padding: 40px 0;
+    font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
+    color: #111;
+  }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      background-color: #e8e8e8; /* 신문지 느낌의 회색 */
-      padding: 0 30px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #e8e8e8;
+    padding: 0 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
 
-    header {
-      border-bottom: 2px solid black;
-      padding: 20px 0;
-    }
+  header {
+    border-bottom: 2px solid black;
+    padding: 20px 0;
+    text-align: center;
+  }
 
-   header h1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 6rem;
-  margin-bottom: 5px;
-  text-align: center;
-}
+  header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(2rem, 6vw, 6rem);
+    margin-bottom: 5px;
+  }
 
-    header p {
-      font-size: 1rem;
-      font-style: italic;
-      text-align: center;
-    }
+  header p {
+    font-size: 1rem;
+    font-style: italic;
+  }
 
-    .newspaper {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      padding: 30px 0;
-    }
-    
-    .img1 {max-width: 660px;
-      grid-column: span 2;
-           margin-bottom: 15px;
-        justify-self: center;
-
-}
-
-    .article1 {
-  grid-column: span 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-}
-    .article1 h2 {
-  font-size: 2.5rem;
-  margin: 0 0 10px;
-}
-    .article1 p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-  text-align: justify;
-}
-    
-        .article3 {
-  grid-column: span 3;
-  display: grid;
-  justify-content: center;
-  padding: 10px;
-}
-    .article3 h3 {
-  font-size: 1.5rem;
-  margin: 0 0 10px;
-}
-    .article3 p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-  text-align: justify;
-}
-    
-            .article4 {
-  grid-column: span 1;
-  grid-row: span 3;            
-  display: grid;
-  padding: 20px;
-  border: solid black 1px;            
-}
-    .article4 h3 {
-  font-size: 1.5rem;
-  margin: 0 0 10px;
-}
-    .article4 ol{font-size: 1rem;
-    line-height:1.5rem}
-    
-    
-    .article4 p {
-  font-size: 1rem;
-  line-height: 1.2;
-  margin: 0;
-  text-align: justify;
-}
-    
-                .article5 {
-  grid-column: span 1;  
-                  grid-row: span 2;
-  display: grid;
-  padding: 20px;          
-}
-    .article5 h3 {
-  font-size: 1.5rem;
-  margin: 0 0 10px;
-}
-    .article5 p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-  text-align: justify;
-}
-
-    .article6 {
-  grid-column: span 2;
-      grid-row: span 1;
-  display: grid;
-  padding: 20px;          
-}
-    .article6 h3 {
-  font-size: 1.5rem;
-  margin: 0 0 10px;
-}
-    .article6 p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-  text-align: justify;
-}
-
-    .img2 {min-width: 300px;
-      grid-column: span 2;
-  grid-row: span 1;            
-  display: grid;
-      justify-self: center;
-}
-
-
-    h2, h3 {
-      margin: 0 0 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    footer {
-      border-top: 2px solid black;
-      padding: 30px 0;
-    }
-
-   .footer-grid {
+ 
+.newspaper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 25px;
+  padding: 30px 0;
 }
+
+h2, hr {
+  grid-column: span 4; 
+  margin: 0;
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-align: left;
+}
+
+hr {
+  border: solid 1px #111;
+  margin-top: 10px;
+}
+  .light{
+  border: none;        
+  border-top: 1px solid #808080;  
+}
+  
+  .img1 {
+    max-width: 100%;
+    height: auto;
+    justify-self: center;
+    grid-column: span 2;
+    aspect-ratio: 4 / 3;
+    background-color: #f2f2f2;
+  }
+  
+    .img2 {
+    max-width: 92%;
+      height: auto;
+    justify-self: center;
+    grid-column: span 2;
+    aspect-ratio: 4 / 3;
+    background-color: #f2f2f2;
+  }
+
+  .article, .article3, .article4, .article5, .article6 {
+    padding: 10px;
+
+  }
+  .article{grid-column: span 1;
+  
+  padding: 10px;
+  font-size: 1rem;  
+  line-height: 1.5; 
+  text-align: justify; 
+}
+
+  .article3 {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+}
+
+.article3 h3 {
+  grid-column: span 3; 
+}
+
+.article3 .a31,
+.article3 .a32,
+.article3 .a33 {
+  margin: 0; 
+}
+
+  .article4 {
+    grid-column: span 1;
+    grid-row: span 3;
+    border: solid black 1px;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+
+  .article5 {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  
+     .article6 {
+    grid-column: span 2;
+    display: grid;
+       grid-template-columns: repeat(2,1fr);
+       gap:20px
+  }
+  
+
+.article6 h3 {
+  grid-column: span 3; 
+}
+
+.article6 .a61,
+.article6 .a62,
+{
+  margin: 0; 
+}
+
+  h2, h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 10px;
+  }
+
+  p, ol {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  footer {
+    border-top: 2px solid black;
+    padding: 30px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 
   .member-box {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px;
-  border-top: 1px solid #aaa;
-  background-color: #e8e8e8;
-  border-radius: 8px;
-}
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-top: 1px solid #aaa;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+  }
 
   .member-box img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  filter: grayscale(100%);
-  border-radius: 4px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border-radius: 4px;
+  }
+
+  .member-box p {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .member-box strong {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* 모바일 대응 */
+  @media (max-width: 768px) {
+    .newspaper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    /* 순서 변경 */
+    .img1     { order: 1; }
+    .article { order: 2; }
+    .article3 { order: 3; }
+    .article4 { order: 4; grid-column: auto; grid-row: auto; }
+    .article5 { order: 5; grid-column: auto; grid-row: auto; }
+    .article6 { order: 6; grid-column: auto; grid-row: auto; }
+    .img2     { order: 7; }
+
+    
+    .img1, .img2 {
+      aspect-ratio: 1 / 1;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .button{   
+    position: fixed;
+  top: 0px;
+left: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  z-index: 1000;}
+  
+  ol li {
+  margin-bottom: 15px; 
 }
+  
+</style>
 
-    .member-box p {
-      margin: 0;
-      font-size: 0.85rem;
-    }
-
-    .member-box strong {
-      font-size: 1rem;
-      display: block;
-      margin-bottom: 4px;
-    }
-  </style>
 </head>
 <body>
-
+ <div class="button">
+  <button onclick="toggleLanguage()">English</button>
+</div>
+  
   <div class="container">
     <header>
       <h1>THE BEATLES TIMES</h1>
       <p>Liverpool, Monday May 27, 2025</p>
+
     </header>
 
     <main class="newspaper">
-      
+
+        <h2 data-en="The Beatles: Who are they?" data-ko="비틀즈는 누구인가?">The Beatles: Who are they?</h2>
+        <hr class="light">
      
+       
               <img class="img1" src="https://visla.kr/wp/wp-content/uploads/2023/11/20231103_00.jpg" alt="The Beatles"/>
 
-      <section class="article1">
+      <section class="article">
 
-        <h2>Who is The Beatles?</h2>
-        <p>
-          In 1956, John Lennon formed a skiffle group called The Quarrymen with friends from Quarry Bank High School in Liverpool. On July 6, 1957, Paul McCartney joined the band, and in 1958, George Harrison became the lead guitarist. By 1960, the band had begun performing in Hamburg and adopted the name “The Beatles” In February 1964, The Beatles appeared on The Ed Sullivan Show, captivating around 73 million viewers. Soon after, they occupied the top five spots on the Billboard Hot 100—a record still unbeaten today. Their success led the way for the "British Invasion," paving the path for other UK bands in the American market.
-          The Beatles influenced not only music but also fashion, art, and societal attitudes. With their long hair, unique clothing, and openness in expression, they became symbols of 1960s youth culture and significantly boosted the global image of British culture.
+        <p data-en="In 1956, John Lennon formed a skiffle group called The Quarrymen with friends from Quarry Bank High School in Liverpool. 
+          On July 6, 1957, Paul McCartney joined the band, and in 1958, George Harrison became the lead guitarist. 
+          By 1960, the band had begun performing in Hamburg and adopted the name 'The Beatles' 
+          In February 1964, The Beatles appeared on The Ed Sullivan Show, captivating around 73 million viewers. 
+          Soon after, they occupied the top five spots on the Billboard Hot 100—a record still unbeaten today. 
+          Their success led the way for the 'British Invasion,' paving the path for other UK bands in the American market." data-ko="1956년, 존 레논은 리버풀의 쿼리 뱅크 고등학교 친구들과 함께 '쿼리맨'이라는 스키플 그룹을 결성했습니다.
+1957년 7월 6일, 폴 매카트니가 밴드에 합류했고, 1958년에는 조지 해리슨이 리드 기타리스트가 되었습니다.
+1960년, 밴드는 함부르크에서 공연을 시작하며 '비틀즈'라는 이름을 사용했습니다.
+1964년 2월, 비틀즈는 에드 설리번 쇼에 출연하여 약 7,300만 명의 시청자를 사로잡았습니다.
+얼마 지나지 않아 빌보드 핫 100 차트에서 5위 안에 들었고, 이 기록은 오늘날까지도 깨지지 않았습니다.
+비틀즈의 성공은 '브리티시 인베이전'의 발판이 되었고, 다른 영국 밴드들이 미국 시장에 진출할 수 있는 길을 열었습니다.">
+          In 1956, John Lennon formed a skiffle group called The Quarrymen with friends from Quarry Bank High School in Liverpool. 
+          On July 6, 1957, Paul McCartney joined the band, and in 1958, George Harrison became the lead guitarist. 
+          <br>By 1960, the band had begun performing in Hamburg and adopted the name 'The Beatles' 
+          In February 1964, The Beatles appeared on The Ed Sullivan Show, captivating around 73 million viewers. 
+          <br>Soon after, they occupied the top five spots on the Billboard Hot 100—a record still unbeaten today. 
+          Their success led the way for the 'British Invasion,' paving the path for other UK bands in the American market.
+          
+        </p>
       </section>
-     
+     <section class="article" data-en=" The Beatles influenced not only music but also fashion, art, and societal attitudes. With their long hair, unique clothing, and openness in expression, they became symbols of 1960s youth culture and significantly boosted the global image of British culture."
+              data-ko="비틀즈는 음악뿐만 아니라 패션, 예술, 그리고 사회적 인식에도 영향을 미쳤습니다. 긴 머리, 독특한 의상, 그리고 표현의 개방성으로 1960년대 청소년 문화의 상징이 되었고, 영국 문화의 국제적 이미지를 크게 향상시켰습니다.">
+        The Beatles influenced not only music but also fashion, art, and societal attitudes. With their long hair, unique clothing, and openness in expression, they became symbols of 1960s youth culture and significantly boosted the global image of British culture.
+      </section>
 
       <section class="article3">
-        <h3>Their Musical Experimentation and Achivements</h3>
-        <p>
-          The Beatles, alongside producer George Martin, revolutionized studio recording, treating the studio itself as an instrument. They pioneered techniques such as multitrack recording, tape loops, reverse effects, and the inclusion of Indian instruments. Their 1967 album Sgt. Pepper's Lonely Hearts Club Band is considered a landmark concept album that elevated pop music into an art form
-        The Beatles have sold over 600 million records globally, making them the best-selling band in history. They hold 20 Billboard No. 1 singles and 19 No. 1 albums. They also received a Grammy Lifetime Achievement Award (2014) and have been inducted into the Grammy Hall of Fame multiple times.
+        <h3 data-en="Their Musical Experimentation and Achievements" data-ko="그들의 음악적 실험과 성과">Their Musical Experimentation and Achivements</h3>
+        <p class="a31" data-en="The Beatles, alongside producer George Martin, revolutionized studio recording, treating the studio itself as an instrument. 
+          They pioneered techniques such as multitrack recording, tape loops, reverse effects, and the inclusion of Indian instruments." data-ko="비틀즈는 프로듀서 조지 마틴과 함께 스튜디오 자체를 악기처럼 다루며 스튜디오 녹음에 혁명을 일으켰습니다.
+그들은 멀티트랙 녹음, 테이프 루프, 리버스 이펙트, 인도 악기 사용 등 다양한 기법을 개척했습니다.">
+          The Beatles, alongside producer George Martin, revolutionized studio recording, treating the studio itself as an instrument. 
+          They pioneered techniques such as multitrack recording, tape loops, reverse effects, and the inclusion of Indian instruments. 
+
+        </p>
+          <p class="a32" data-en="Their 1967 album Sgt. Pepper's Lonely Hearts Club Band is considered a landmark concept album that elevated pop music into an art form.
+        The Beatles have sold over 600 million records globally, making them the best-selling band in history." data-ko="
+1967년 발매된 비틀즈의 앨범 'Sgt. Pepper's Lonely Hearts Club Band'는 팝 음악을 예술의 경지로 끌어올린 획기적인 콘셉트 앨범으로 평가받고 있습니다.
+비틀즈는 전 세계적으로 6억 장 이상의 음반을 판매하며 역사상 가장 많은 음반을 판매한 밴드로 기록되었습니다.">
+          
+          Their 1967 album Sgt. Pepper's Lonely Hearts Club Band is considered a landmark concept album that elevated pop music into an art form.
+        The Beatles have sold over 600 million records globally, making them the best-selling band in history. 
+
+        </p>
+          <p class="a33" data-en="They hold 20 Billboard No. 1 singles and 19 No. 1 albums. 
+          They also received a Grammy Lifetime Achievement Award (2014) and have been inducted into the Grammy Hall of Fame multiple times." data-ko="
+그들은 빌보드 1위 싱글 20곡과 1위 앨범 19곡을 보유하고 있습니다.
+또한 2014년 그래미 평생공로상을 수상했으며, 그래미 명예의 전당에 여러 차례 헌액되었습니다.">
+ 
+          They hold 20 Billboard No. 1 singles and 19 No. 1 albums. 
+          They also received a Grammy Lifetime Achievement Award (2014) and have been inducted into the Grammy Hall of Fame multiple times.
         </p>
       </section>
 
       <section class="article4">
-        <h3>5 Interesting and Fun Facts About The Beatles</h3>
-        <ol>
-          <li><b>Ringo Starr was not the original drummer!</b>
-          <p>The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today.</p>
-          </li>
-          <li><b>The name “The Beatles” is a pun!</b>
-          <p>The band’s name is a play on words, combining “beetle” (the insect) with “beat” (as in music rhythm).</p>
-          </li>
-          <li><b>None of the Beatles could read music!</b>
-          <p>John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music.</p>
-          </li>
-          <li><b>In 1967, The Beatles did the world’s first satellite TV broadcast!</b>
-          <p>Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World.</p> 
-          </li>
-          <li><b>The “Paul is dead” conspiracy theory!</b>
-          <p>In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to “clues” hidden in album covers and lyrics to support the theory.</p>
-          </li>  
-        </ol>
-      </section>
-      
+    <h3 data-en="5 Fun Facts About The Beatles" data-ko="비틀즈에 대한 5가지 재미있는 사실">5 Fun Facts About The Beatles</h3>
+    <br>
+    <ol>
+      <li data-en="Ringo Starr was not the original drummer!" data-ko="링고 스타는 원래 드러머가 아니었습니다!">
+        <div>
+          <b>Ringo Starr was not the original drummer!</b>
+          <p data-en="The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today."
+             data-ko="비틀즈의 초창기 드러머는 피트 베스트였습니다. 1962년 링고 스타가 그의 자리를 대신하면서 오늘날 우리가 알고 있는 고전적인 라인업이 완성되었습니다.">
+             The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today.
+          </p>
+        </div>
+      </li>
+      <li data-en="The name 'The Beatles' is a pun!" data-ko="'비틀즈'라는 이름은 말장난이에요!">
+        <div><b>The name 'The Beatles' is a pun!</b>
+        <p data-en="The band’s name is a play on words, combining 'beetle' (the insect) with 'beat' (as in music rhythm)."
+           data-ko="밴드 이름은 '딱정벌레'라는 뜻의 'beetle'과 음악의 리듬을 뜻하는 'beat'를 합친 말장난입니다.">The band’s name is a play on words, combining 'beetle' (the insect) with 'beat' (as in music rhythm).</p></div>
+      </li>
+      <li data-en="None of the Beatles could read music!" data-ko="비틀즈 멤버 중 누구도 악보를 읽을 수 없었습니다!">
+        <b>None of the Beatles could read music!</b>
+        <p data-en="John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music."
+           data-ko="존, 폴, 조지, 링고는 모두 독학으로 음악을 익힌 사람들이었고, 전통적인 악보를 읽는 법을 배운 적이 없습니다.">John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music.</p>
+      </li>
+      <li data-en="In 1967, The Beatles did the world’s first satellite TV broadcast!" data-ko="1967년, 비틀즈는 세계 최초로 위성 TV 방송을 했습니다!">
+        <b>In 1967, The Beatles did the world’s first satellite TV broadcast!</b>
+        <p data-en="Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World."
+           data-ko="그들의 노래 'All You Need Is Love'는 Our World 프로그램을 통해 24개국에서 4억 명 이상의 사람들에게 라이브로 공연되고 방송되었습니다.">Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World.</p>
+      </li>
+      <li data-en="The 'Paul is dead' conspiracy theory!" data-ko="'폴은 죽었다'는 음모론!">
+        <b>The 'Paul is dead' conspiracy theory!</b>
+        <p data-en="In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to 'clues' hidden in album covers and lyrics to support the theory."
+           data-ko="1969년, 폴 매카트니가 사망하고 닮은 꼴이 등장했다는 소문이 돌았습니다. 팬들은 이 이론을 뒷받침하기 위해 앨범 커버와 가사에 숨겨진 '단서'를 제시했습니다.">In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to 'clues' hidden in album covers and lyrics to support the theory.</p>
+      </li>
+    </ol>
+  </section>
+
 <section class="article5">
-        <h3>The Beatles' Breakup and Its Aftermath</h3>
-        <p>The Beatles rose to global fame in the 1960s but officially disbanded in 1970. Their breakup began with the sudden death of manager Brian Epstein in 1967, which disrupted the band’s internal balance and direction.
-
-They created Apple Corps but faced major disagreements over management. Paul clashed with the others over who should lead. Creative differences also widened—John leaned toward experimental, political music while Paul preferred classic pop. George and Ringo often felt sidelined.
-
-John Lennon’s relationship with Yoko Ono added tension to the group dynamic. After releasing their final album Abbey Road in 1969, John privately expressed his intent to leave. In 1970, Paul publicly announced his departure, officially ending the band.
-
-Despite the breakup, all four members continued successful solo careers. The Beatles’ legacy remains one of the most influential in music history.
-
-
-          
+        <h3 data-en="The Beatles' Breakup and Its Aftermath" data-ko="비틀즈 해체와 그 여파">The Beatles' Breakup and Its Aftermath</h3>
+        <p data-en="The Beatles rose to global fame in the 1960s but officially disbanded in 1970. 
+          Their breakup began with the sudden death of manager Brian Epstein in 1967, which disrupted the band’s internal balance and direction.
+          They created Apple Corps but faced major disagreements over management. Paul clashed with the others over who should lead. 
+          Creative differences also widened—John leaned toward experimental, political music while Paul preferred classic pop. George and Ringo often felt sidelined.
+          John Lennon’s relationship with Yoko Ono added tension to the group dynamic. 
+          After releasing their final album Abbey Road in 1969, John privately expressed his intent to leave. 
+          In 1970, Paul publicly announced his departure, officially ending the band.
+          Despite the breakup, all four members continued successful solo careers. 
+          The Beatles’ legacy remains one of the most influential in music history."
+           data-ko="비틀즈는 1960년대에 세계적인 명성을 얻었지만 1970년에 공식적으로 해체되었습니다.
+그들의 해체는 1967년 매니저 브라이언 엡스타인의 갑작스러운 죽음으로 시작되었는데, 이는 밴드 내부의 균형과 방향성을 무너뜨렸습니다.
+그들은 애플 코어(Apple Corps)를 설립했지만 경영진을 놓고 심각한 의견 충돌에 직면했습니다. 폴은 누가 리더를 맡을지 놓고 다른 멤버들과 충돌했습니다.
+창작적인 차이 또한 벌어졌습니다. 존은 실험적이고 정치적인 음악을 선호하는 반면, 폴은 클래식 팝을 선호했습니다. 조지와 링고는 종종 소외감을 느꼈습니다.
+존 레논과 오노 요코의 관계는 그룹 내 역학 관계에 긴장감을 더했습니다.
+1969년 마지막 앨범인 애비 로드(Abbey Road)를 발매한 후, 존은 비공개적으로 탈퇴 의사를 표명했습니다.
+1970년, 폴은 공식적으로 탈퇴를 발표하며 밴드를 공식적으로 해체했습니다.
+해체에도 불구하고 네 멤버 모두 성공적인 솔로 활동을 이어갔습니다.
+비틀즈의 유산은 음악 역사상 가장 영향력 있는 유산 중 하나로 남아 있습니다.">The Beatles rose to global fame in the 1960s but officially disbanded in 1970. 
+          Their breakup began with the sudden death of manager Brian Epstein in 1967, which disrupted the band’s internal balance and direction.
+          <br>They created Apple Corps but faced major disagreements over management. Paul clashed with the others over who should lead. 
+          <br>Creative differences also widened—John leaned toward experimental, political music while Paul preferred classic pop. George and Ringo often felt sidelined.
+          John Lennon’s relationship with Yoko Ono added tension to the group dynamic. 
+          <br>After releasing their final album Abbey Road in 1969, John privately expressed his intent to leave. 
+          In 1970, Paul publicly announced his departure, officially ending the band.
+          <br>Despite the breakup, all four members continued successful solo careers. 
+          The Beatles’ legacy remains one of the most influential in music history.
         </p>
     </section>
       <section class="article6">
-        <h3>Key Albums and Musical Evolution</h3>
-        <p>In their later years, The Beatles evolved through bold experimentation and genre expansion. Their 1966 album Revolver is hailed as a psychedelic rock milestone, with "Tomorrow Never Knows" showcasing groundbreaking techniques like tape loops and reverse recording. George Harrison's "Love You To" reflects strong Indian musical influences with sitar and tabla. The 1968 double LP The Beatles (commonly called the White Album) featured an eclectic mix of rock, folk, reggae, and avant-garde, highlighting each member’s individuality. Their final recorded album, Abbey Road (1969), is known for its seamless medley on the B-side, creating a narrative-like flow. The last track, "The End," symbolizes their collaborative spirit, including Ringo Starr’s only drum solo and rotating guitar solos from the other members. These albums mark The Beatles’ transformation from pop sensations into icons of musical innovation.</p>
+        <h3 data-en="Key Albums and Musical Evolution" data-ko="주요 앨범과 음악적 진화">Key Albums and Musical Evolution</h3>
+        <p class="a61" data-en=" is hailed as a psychedelic rock milestone, with 'Tomorrow Never Knows' showcasing groundbreaking techniques like tape loops and reverse recording. 
+          George Harrison's 'Love You To' reflects strong Indian musical influences with sitar and tabla. 
+          The 1968 double LP The Beatles (commonly called the White Album) featured an eclectic mix of rock, folk, reggae, and avant-garde, highlighting each member’s individuality."
+           data-ko="사이키델릭 록의 이정표로 평가받는 앨범 'Tomorrow Never Knows'는 테이프 루프와 역방향 녹음과 같은 획기적인 기법을 선보입니다.
+조지 해리슨의 'Love You To'는 시타르와 타블라를 통해 인도 음악의 강한 영향을 반영합니다.
+1968년 발매된 더블 LP '비틀즈'(흔히 화이트 앨범이라고 불림)는 록, 포크, 레게, 아방가르드가 절충적으로 어우러져 각 멤버의 개성을 강조했습니다.">In their later years, The Beatles evolved through bold experimentation and genre expansion. 
+          Their 1966 album Revolver is hailed as a psychedelic rock milestone, with 'Tomorrow Never Knows' showcasing groundbreaking techniques like tape loops and reverse recording. 
+          George Harrison's 'Love You To' reflects strong Indian musical influences with sitar and tabla. 
+          The 1968 double LP The Beatles (commonly called the White Album) featured an eclectic mix of rock, folk, reggae, and avant-garde, highlighting each member’s individuality. 
+          </p>
+        <p class="a62" data-en="Their final recorded album, Abbey Road (1969), is known for its seamless medley on the B-side, creating a narrative-like flow. 
+          The last track, 'The End,' symbolizes their collaborative spirit, including Ringo Starr’s only drum solo and rotating guitar solos from the other members. 
+          These albums mark The Beatles’ transformation from pop sensations into icons of musical innovation." data-ko="그들의 마지막 앨범인 Abbey Road(1969)는 B면의 매끄럽고 자연스러운 메들리로 유명하며, 마치 서사적인 흐름을 만들어냅니다.
+마지막 트랙인 'The End'는 링고 스타의 유일한 드럼 솔로와 다른 멤버들의 번갈아 가며 연주되는 기타 솔로를 포함하여 그들의 협력 정신을 상징합니다.
+이 앨범들은 비틀즈가 팝 센세이션에서 음악적 혁신의 아이콘으로 거듭나는 과정을 보여줍니다.">Their final recorded album, Abbey Road (1969), is known for its seamless medley on the B-side, creating a narrative-like flow. 
+          The last track, 'The End,' symbolizes their collaborative spirit, including Ringo Starr’s only drum solo and rotating guitar solos from the other members. 
+          These albums mark The Beatles’ transformation from pop sensations into icons of musical innovation.</p>
     
-
-      
       </section>
       
       <img class="img2" src="https://cdn.bnuepress.com/news/photo/202312/876_824_5836.png">
@@ -298,7 +439,37 @@ Despite the breakup, all four members continued successful solo careers. The Bea
       </div>
     </footer>
   </div>
+  
 
+<script>
+ let isKorean = false;
+
+
+
+      
+      toggleLanguage();
+    });
+
+    
+    function toggleLanguage() {
+      const allElements = document.querySelectorAll('[data-en][data-ko]');
+      allElements.forEach(el => {
+        const htmlContent = isKorean ? el.getAttribute('data-ko') : el.getAttribute('data-en');
+        el.innerHTML = htmlContent;
+      });
+
+     
+      const button = document.querySelector('.button button');
+      button.textContent = isKorean ? '한국어' : 'English';
+
+      
+      document.documentElement.lang = isKorean ? 'en' : 'ko';
+
+     
+      isKorean = !isKorean;
+    }
+  
+</script>
+<script src="kimJ_1.js"></script>
 </body>
 </html>
-
