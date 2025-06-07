@@ -112,10 +112,18 @@
       border: 1px solid #222;
     }
 
-    .main-image, .square-image {
+    .main-image, {
       aspect-ratio: 1 / 1;
       margin-bottom: 10px;
     }
+
+       .square-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+}
 
     .full-poster {
       border: 1px solid #222;
@@ -224,13 +232,6 @@
       .main-image, .full-poster {
         aspect-ratio: auto;
       }
-
-      .square-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
     
   </style>
 </head>
