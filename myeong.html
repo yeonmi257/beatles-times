@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<meta name="robots" content="noindex">
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Beatles Times</title>
   <style>
+
+html:lang(ko) body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+html:lang(en) body {
+  font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
+}
     body {
-      background-color: #111; 
+      background-color: #111;
       margin: 0;
       padding: 40px 0;
       font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
       color: #111;
+      font-size: 1rem;
     }
 
     .container {
@@ -23,6 +32,7 @@
 
     .headline {
       border-bottom: 1px solid #222;
+      border-top: 2px solid black;
       padding: 30px 0 20px;
       text-align: center;
     }
@@ -33,8 +43,9 @@
       margin: 0;
     }
 
+    .button {text-align: center; margin-top: 10px; margin-bottom: 50px;}
+
     header {
-      border-bottom: 2px solid black;
       padding: 20px 0;
     }
 
@@ -54,7 +65,7 @@
     h1 {
       font-size: 3rem;
       text-align: left;
-      margin-bottom: 0; 
+      margin-bottom: 0;
     }
 
     .newspaper {
@@ -77,32 +88,29 @@
     .Italic {
       font-style: italic;
       border-top: 4px solid black;
-      border-bottom: 4px solid black; 
-      padding: 5px 0; 
+      border-bottom: 4px solid black;
+      padding: 5px 0;
       text-align: center;
       line-height: 1.6;
-      text;
     }
 
     .article.wide2 {
       grid-column: 2 / 4;
       text-align: left;
-      padding-bottom: 0; 
+      padding-bottom: 0;
     }
 
     .article.wide2 img {
-      width: 100%;         
-      display: block;      
-      padding-bottom: -5px;
+      width: 100%;
+      display: block;
     }
 
     .two-col-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 25px;        
+      gap: 25px;
       margin-top: 10px;
     }
-
 
     h2, h3 {
       margin: 0 0 10px;
@@ -151,59 +159,114 @@
       display: block;
       margin-bottom: 4px;
     }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 3rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      .headline h2 {
+        font-size: 2.2rem;
+      }
+
+      .newspaper {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .article.wide2 {
+        grid-column: 1 / -1;
+      }
+
+      .two-col-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .member-box {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .member-box img {
+        width: 60px;
+        height: 60px;
+      }
+    }
   </style>
 </head>
 <body>
-
   <div class="container">
     <header>
       <h1>THE BEATLES TIMES</h1>
       <p>Liverpool, Monday May 27, 2025</p>
     </header>
 
+    <div class="button">
+      <button onclick="toggleLanguage()">English</button>
+    </div>
+
     <section class="headline">
-      <h2>Where Memory Lingers:<br>Strawberry Fields</h2>
+      <h2 data-en="Where Memory Lingers: <b>r Fields" data-ko="기억이 머무는 곳:<br>스트로베리 필드">Where Memory Lingers:<br>Strawberry Fields</h2>
+
     </section>
 
     <main class="newspaper">
       <section class="article">
-        <h3>Where Memory Begins, Beyond the Quiet Fields of Strawberry Dreams,
-          In the Whisper of Time’s Gentle Embrace</h3>
-        <p>strawberry field was the name of a salvation army children's home close to john lennon's childhood home in woolton, a suburb of liverpool. lennon and his friends pete shotton, nigel walley and ivan vaughan used to play in the wooded garden behind the home. one of lennon's childhood treats was the garden party held each summer in calderstones park, near the home, where a salvation army brass band played. lennon's aunt mimi smith recalled: "there was something about the place that always fascinated john. he could see it from his window … he used to hear the salvation army band playing at the garden party, and he would pull me along, saying, 'hurry up, mimi – we're going to be late.'"
-        </p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Strawberryfieldgate.jpg/960px-Strawberryfieldgate.jpg" alt="gates at Strawberry Field">
-        <p><strong>gates at Strawberry Field, near Lennon's childhood home in Woolton, Liverpool</strong></p>
+        <h3 data-en="Where Memory Begins, Beyond the Quiet Fields of Strawberry Dreams,
+        In the Whisper of Time’s Gentle Embrace" data-ko="기억이 시작되는 곳, 조용한 딸기밭 너머로 — 시간의 속삭임에 실려">Where Memory Begins, Beyond the Quiet Fields of Strawberry Dreams,
+        In the Whisper of Time’s Gentle Embrace</h3>
+        <p data-en="Strawberry Field was the name of a Salvation Army children's home close to John Lennon's childhood home in Woolton, a suburb of Liverpool. Lennon and his friends Pete Shotton, Nigel Walley and Ivan Vaughan used to play in the wooded garden behind the home. One of Lennon's childhood treats was the garden party held each summer in Calderstones Park, near the home, where a Salvation Army brass band played. Lennon's aunt Mimi Smith recalled: There was something about the place that always fascinated John. He could see it from his window … he used to hear the Salvation Army band playing at the garden party, and he would pull me along, saying, Hurry up, Mimi were going to be late." data-ko="스트로베리 필드는 리버풀 교외 울튼에 있는 존 레논의 어린 시절 집 근처에 자리한 구세군 아동 보호시설의 이름이었다. 레논은 친구 피트 쇼튼, 나이절 월리, 아이반 보건과 함께 그 건물 뒤편의 숲이 우거진 정원에서 자주 놀곤 했다. 그의 어린 시절 즐거움 중 하나는 매년 여름, 보호소 인근 칼더스톤스 공원에서 열리던 정원 파티였다. 이곳에서는 구세군 브라스 밴드가 연주를 펼쳤다. 이모 미미 스미스는 이렇게 회상했다. “그곳은 항상 존의 호기심을 자극했어요. 자기 방 창문에서도 보였거든요. 정원 파티에서 구세군 밴드가 연주를 시작하면 존은 제 손을 끌며 ‘서둘러, 미미! 늦겠어!’ 하고 말했죠.”">Strawberry Field was the name of a Salvation Army children's home close to John Lennon's childhood home in Woolton, a suburb of Liverpool. Lennon and his friends Pete Shotton, Nigel Walley and Ivan Vaughan used to play in the wooded garden behind the home. One of Lennon's childhood treats was the garden party held each summer in Calderstones Park, near the home, where a Salvation Army brass band played. Lennon's aunt Mimi Smith recalled: There was something about the place that always fascinated John. He could see it from his window … he used to hear the Salvation Army band playing at the garden party, and he would pull me along, saying, Hurry up, Mimi were going to be late.</p>
+        <a href="https://www.strawberryfield.salvationarmy.org.uk" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Strawberryfieldgate.jpg/960px-Strawberryfieldgate.jpg" alt="gates at Strawberry Field"></a>
+        <h3 data-en="Gates at Strawberry Field, near Lennon's childhood home in Woolton, Liverpool" data-ko="리버풀 울튼에 위치한 레논의 어린 시절 집 근처, 스트로베리 필드의 철문">Gates at Strawberry Field, near Lennon's childhood home in Woolton, Liverpool</h3>
         <div class="Italic">
-          <p>The name of the home became famous in 1967 with the release of the Beatles' single "Strawberry Fields Forever"</p>
-        </div> 
-        <p>Nestled in the verdant outskirts of Woolton, Liverpool, lies a modest red-brick building whose unassuming façade belies its global significance. Strawberry Field was originally a Salvation Army children’s home, established in 1936 to provide refuge and camaraderie for local families in need. It was here, amid the walled garden and gates that creaked in the gentle Liverpool breeze, that a young John Lennon first glimpsed a world beyond his childhood home. More than simply a charity-run institution</p>
+          <p data-en="The name of the home became famous in 1967 with the release of the Beatles single Strawberry Fields Forever" data-ko="이 보호소의 이름은 1967년 비틀즈의 싱글 「Strawberry Fields Forever」가 발표되면서 전 세계적으로 알려지게 되었다.
+          ">The name of the home became famous in 1967 with the release of the Beatles single Strawberry Fields Forever</p>
+        </div>
+        <p data-en="Nestled in the verdant outskirts of Woolton, Liverpool, lies a modest red-brick building whose unassuming façade belies its global significance. Strawberry Field was originally a Salvation Army children’s home, established in 1936 to provide refuge and camaraderie for local families in need. It was here, amid the walled garden and gates that creaked in the gentle Liverpool breeze, that a young John Lennon first glimpsed a world beyond his childhood home. More than simply a charity-run institution, it represented a private kingdom of imagination, sealed off from the hardships of the real world." data-ko="리버풀 울튼의 푸르른 변두리에 자리한 소박한 붉은 벽돌 건물 하나가 있다. 겉모습은 평범하지만, 그 존재는 세계적으로 깊은 의미를 지닌다. 스트로베리 필드는 원래 1936년, 도움이 필요한 지역 가족들에게 안식처와 공동체를 제공하기 위해 설립된 구세군 아동 보호소였다. 어린 존 레논은 이곳, 담장 너머로 부드러운 리버풀 바람에 삐걱이던 철문과 정원을 통해 자신의 집 밖 세상을 처음으로 엿보았다. 단순한 자선기관을 넘어, 이곳은 현실의 고단함과는 단절된 상상의 왕국이자, 그만의 비밀스러운 피난처였다.
+        ">Nestled in the verdant outskirts of Woolton, Liverpool, lies a modest red-brick building whose unassuming façade belies its global significance. Strawberry Field was originally a Salvation Army children’s home, established in 1936 to provide refuge and camaraderie for local families in need. It was here, amid the walled garden and gates that creaked in the gentle Liverpool breeze, that a young John Lennon first glimpsed a world beyond his childhood home. More than simply a charity-run institution, it represented a private kingdom of imagination, sealed off from the hardships of the real world.</p>
       </section>
 
-   
       <section class="article wide2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Straberry_field_sign.jpg/500px-Straberry_field_sign.jpg" alt="Strawberry Fields Sign">
-        <h1>Strawberry Fields Forever: A Place Where Memory Sings</h1>
-
-
+        <a href="https://www.centralparknyc.org/locations/strawberry-fields" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Straberry_field_sign.jpg/500px-Straberry_field_sign.jpg" alt="Strawberry Fields Sign"></a>
+        <h1 data-en="Strawberry Fields Forever: A Place Where Memory Sings" data-ko="스트로베리 필즈 포에버: 기억이 노래하는 곳
+        ">Strawberry Fields Forever: A Place Where Memory Sings</h1>
         <div class="two-col-wrapper">
-          <p><strong> a boy, John Lennon’s curiosity often led him to peer over the garden walls of Strawberry Field.</strong><br> His aunt Mimi Smith would tell of how, on warm Liverpool afternoons, John would tug at her sleeve, urging her to hurry so he could catch the sight and sounds of the Salvation Army band rehearsing in the courtyard. The isolated home—surrounded by towering wrought-iron gates, climbing ivy, and clipped hedges—posed a stark contrast to John’s own upbringing; his beloved mother Julia lived nearby but tragically passed away when he was only seventeen. For a sensitive, imaginative child, the consequence was a strong, almost reverential attachment to Strawberry Field’s peaceful groundwith eyes closed, misunderstanding all you see,”s, where the world with eyes closed, misunderstanding all ywith eyes closed, misunderstanding all you see,”ou see,”seemed full of promise and possibility.
-          <p>When Lennon and Paul McCartney began composing “Strawberry Fields Forever” during the filming of How I Won the War in Almería, Spain (1966), the lyrical muse came not from a glamorous concert stage or a crowded street, but from those tranquil gates back home. With evocative lines like “Living is easy with eyes closed, misunderstanding all you see,” John wove memory and imagination into a tapestry of sound that blurred the lines between nostalgia and dreamscape. The song’s haunting Mellotron introduction, paired with Lennon’s vocals drenched in reverb, invited listeners to step into the same sepia-tinged reveries he once experienced behind those gates. Though the track was recorded far from Liverpool, the spirit of Strawberry Field lingered in every note—an enduring testament to how a simple place can shape a life.with eyes closed, misunderstanding all you see,”
-          </p>
+          <p data-en="As a boy, John Lennon’s boundless curiosity often led him to gaze longingly over the high garden walls of Strawberry Field, a place that felt both mysterious and magnetic. Nestled within its ivy-covered perimeter was a world that seemed far removed from the gray, post-war streets of Liverpool. His Aunt Mimi would often recall how, on warm and breezy afternoons, John would tug insistently at her sleeve, urging her to walk faster so he wouldn’t miss the sound of the Salvation Army band rehearsing within those walls. To John, the music was more than just brass instruments—it was a signal from a hidden world of beauty and imagination, a world that welcomed dreamers like him. The tall wrought-iron gates, the rustling trees, and the scent of the grass after rain left impressions that lingered in his mind like verses waiting to be written.
+          The home itself, though built for children in need, offered Lennon a kind of emotional refuge. Its existence stood in poignant contrast to his own fractured upbringing—his mother Julia, vibrant and free-spirited, was present in his life only fleetingly before her tragic death when he was seventeen." data-ko="소년 시절, 존 레논의 끝없는 호기심은 그를 종종 스트로베리 필드의 높은 정원 담장을 바라보게 했다. 그곳은 신비롭고도 묘하게 끌리는 장소였다. 담장을 따라 무성하게 자란 아이비 안쪽에는, 회색빛 전후 리버풀 거리와는 전혀 다른 세계가 자리하고 있었다. 따뜻한 바람이 불던 오후면, 존은 이모 미미의 소매를 끈질기게 잡아당기며 서두르자고 조르곤 했다. 담장 너머에서 울려 퍼지던 구세군 밴드의 연주를 놓치고 싶지 않았기 때문이다. 그에게 음악은 단순한 금관악기 소리가 아니었다. 그것은 아름다움과 상상의 숨은 세계로부터 오는 신호였고, 자신 같은 몽상가를 반기는 세계였다. 높이 솟은 철제 문, 바람에 흔들리는 나무들, 그리고 비 온 뒤 풀 냄새는 마치 쓰이지 않은 시구처럼 그의 기억 속에 오래도록 남았다.
+          이 보호소는 도움이 필요한 아이들을 위해 세워졌지만, 레논에게는 정서적 피난처가 되어주었다. 그 존재는 그의 불안정한 성장 환경과 강렬한 대조를 이루었다. 생기 넘치고 자유로운 영혼이었던 어머니 줄리아는 그의 삶에 잠시 머물다, 그가 열일곱이 되던 해에 비극적으로 세상을 떠났다.">As a boy, John Lennon’s boundless curiosity often led him to gaze longingly over the high garden walls of Strawberry Field, a place that felt both mysterious and magnetic. Nestled within its ivy-covered perimeter was a world that seemed far removed from the gray, post-war streets of Liverpool. His Aunt Mimi would often recall how, on warm and breezy afternoons, John would tug insistently at her sleeve, urging her to walk faster so he wouldn’t miss the sound of the Salvation Army band rehearsing within those walls. To John, the music was more than just brass instruments—it was a signal from a hidden world of beauty and imagination, a world that welcomed dreamers like him. The tall wrought-iron gates, the rustling trees, and the scent of the grass after rain left impressions that lingered in his mind like verses waiting to be written.
+          The home itself, though built for children in need, offered Lennon a kind of emotional refuge. Its existence stood in poignant contrast to his own fractured upbringing—his mother Julia, vibrant and free-spirited, was present in his life only fleetingly before her tragic death when he was seventeen.</p>
+          <p data-en="Strawberry Field became, in many ways, a silent witness to that sense of loss. For the sensitive and creative young boy he was, the place offered not only solace but something sacred. It was a landscape that allowed his mind to wander freely, to imagine other lives and possibilities. Within its quiet boundaries, he found a sense of order, of protection, and above all, of wonder. It was a place where the world, with eyes closed and heart open, revealed truths that reality often concealed.
+          When Lennon and Paul McCartney began working on “Strawberry Fields Forever” during the filming of How I Won the War in Almería, Spain (1966), John found himself drawn once again to that place of memory. The song was not born of stardom or spectacle, but of longing—for home, for innocence, for the quiet magic that had once lived behind a locked gate. With lyrics like “Living is easy with eyes closed, misunderstanding all you see,” he invited listeners to enter that hazy borderland between past and dream, where emotion trumped logic." data-ko="스트로베리 필드는 여러모로 존 레논이 느꼈던 상실의 감정을 조용히 지켜본 증인이 되었다. 감수성이 풍부하고 창의적이었던 어린 소년에게 이곳은 단순한 위로를 넘어, 일종의 성스러운 공간이었다. 그곳은 그의 마음이 자유롭게 방황하고, 다른 삶과 가능성을 상상할 수 있게 해주는 풍경이었다. 고요한 경계 안에서 그는 질서와 보호, 그리고 무엇보다도 경이로움을 발견했다. 세상을 눈을 감고 마음을 열어 바라볼 때, 현실이 감춰온 진실이 그곳에선 조용히 드러났다.
+          1966년 스페인 알메리아에서 영화 *How I Won the War*를 촬영하던 중, 레논과 폴 매카트니는 「Strawberry Fields Forever」 작업을 시작했다. 이 곡은 명성이나 화려함에서 비롯된 것이 아니라, 닫힌 철문 너머에 남겨졌던 기억의 장소에 대한 그리움에서 태어났다. 고향에 대한 그리움, 순수함에 대한 그리움, 한때 존재했던 조용한 마법에 대한 그리움 말이다. “눈을 감으면 인생은 쉬워져, 네가 보는 걸 오해하니까”라는 가사를 통해 그는 청자들을 과거와 꿈의 경계, 감정이 이성을 압도하는 흐릿한 세계로 초대했다.
+          ">Strawberry Field became, in many ways, a silent witness to that sense of loss. For the sensitive and creative young boy he was, the place offered not only solace but something sacred. It was a landscape that allowed his mind to wander freely, to imagine other lives and possibilities. Within its quiet boundaries, he found a sense of order, of protection, and above all, of wonder. It was a place where the world, with eyes closed and heart open, revealed truths that reality often concealed.
+          When Lennon and Paul McCartney began working on “Strawberry Fields Forever” during the filming of How I Won the War in Almería, Spain (1966), John found himself drawn once again to that place of memory. The song was not born of stardom or spectacle, but of longing—for home, for innocence, for the quiet magic that had once lived behind a locked gate. With lyrics like “Living is easy with eyes closed, misunderstanding all you see,” he invited listeners to enter that hazy borderland between past and dream, where emotion trumped logic.</p>
         </div>
       </section>
 
       <section class="article">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Straberry_field_sign.jpg/500px-Straberry_field_sign.jpg">
-        <h3>Melodies from the Garden: The Story Behind the Strawberry Fields Album</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Pennystrawps.jpg">
-        <h3>From Gates to Greatness: The Evolution of a Beatles Classic</h3>
-        <p>When The Beatles released their iconic “Strawberry Fields Forever” single in 1967, they ushered in a new era of studio experimentation and introspection. The song eventually appeared on various compilation albums—most notably the 1972 “Strawberry Fields” album issued by Parlophone in certain countries—which collected together fan-favorite psychedelic tracks. Although this particular album was not a standard .</p>
+        <a href="https://youtu.be/HtUH9z_Oey8?si=X08vDBCOYgJ6TQJT" target="_blank"><img src="https://i.namu.wiki/i/NqnUwLyba-gJdL1gkb8_4sQxicIeiwReECcsRe1DBPGs4PSASwerO9VzniVJ9X3HesVFLE0GBG_IDjAAb1Kdgw.jpg" alt="Strawberry Field Sign"><a>
+        <h3 data-en="Melodies from the Garden: The Story Behind the Strawberry Fields Album" data-ko="정원의 선율: 스트로베리 필즈 앨범의 뒷이야기
+        ">Melodies from the Garden: The Story Behind the Strawberry Fields Album</h3>
+        <a href="https://en.wikipedia.org/wiki/Strawberry_Fields_Forever?utm_source=chatgpt.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/6/69/Pennystrawps.jpg" alt="Penny Lane and Strawberry Fields"></a>
+        <h3 data-en="From Gates to Greatness: The Evolution of a Beatles Classic" data-ko="철문에서 전설로: 비틀즈 명곡의 진화
+        ">From Gates to Greatness: The Evolution of a Beatles Classic</h3>
+        <p data-en="When The Beatles released their iconic “Strawberry Fields Forever” single in 1967, they ushered in a new era of studio experimentation and introspection. The song eventually appeared on various compilation albums—most notably the 1972 “Strawberry Fields” album issued by Parlophone in certain countries—which collected together fan-favorite psychedelic tracks. Although this particular album was not a standard release in the UK or US, its popularity among collectors and fans made it a cult favorite." data-ko="비틀즈가 1967년 대표 싱글 「Strawberry Fields Forever」를 발표했을 때, 그들은 스튜디오 실험과 내면적 성찰의 새로운 시대를 열었다. 이 곡은 이후 여러 편집 앨범에 수록되었으며, 특히 1972년 일부 국가에서 팔로폰(Parlophone) 레이블을 통해 발매된 「Strawberry Fields」 앨범은 팬들이 사랑한 사이키델릭 트랙들을 모아 큰 주목을 받았다. 비록 이 앨범은 영국이나 미국에서는 정식 발매되지 않았지만, 수집가들과 팬들 사이에서는 컬트적인 인기를 끌었다.
+        ">When The Beatles released their iconic “Strawberry Fields Forever” single in 1967, they ushered in a new era of studio experimentation and introspection. The song eventually appeared on various compilation albums—most notably the 1972 “Strawberry Fields” album issued by Parlophone in certain countries—which collected together fan-favorite psychedelic tracks. Although this particular album was not a standard release in the UK or US, its popularity among collectors and fans made it a cult favorite.</p>
         <div class="Italic">
-          <p>“It was a sort of happy place for me.”<br>- John Lennon -</p>
+          <p data-en="“It was a sort of happy place for me.”- John Lennon -" data-ko="“그곳은 나에게 일종의 행복한 장소였어요.” — 존 레논 —
+            ">“It was a sort of happy place for me.”<br>- John Lennon -</p>
         </div>
-        <p>When The Beatles released their iconic “Strawberry Fields Forever” single in 1967, they ushered in a new era of studio experimentation and introspection. The song eventually.</p>
+        <p data-en="When The Beatles released their iconic “Strawberry Fields Forever” single in 1967, they ushered in a new era of studio experimentation and introspection. The song eventually earned a legacy beyond its initial chart placement—forever remembered as one of Lennon’s most personal and poetic works." data-ko="비틀즈가 1967년 상징적인 싱글 「Strawberry Fields Forever」를 발표했을 때, 그들은 스튜디오 실험과 내면적 탐구의 새로운 시대를 열었다. 이 곡은 초기 차트 성적을 넘어서는 유산을 남기며, 레논의 가장 개인적이고 시적인 작품 중 하나로 영원히 기억되고 있다.
+        ">When The Beatles released their iconic “Strawberry Fields Forever” single in 1967, they ushered in a new era of studio experimentation and introspection. The song eventually earned a legacy beyond its initial chart placement—forever remembered as one of Lennon’s most personal and poetic works.</p>
       </section>
-    
     </main>
 
     <footer>
@@ -228,5 +291,25 @@
     </footer>
   </div>
 
+  <script>
+    let isKorean = false;
+  
+    function toggleLanguage() {
+      const allElements = document.querySelectorAll('[data-en][data-ko]');
+      allElements.forEach(el => {
+        const newContent = isKorean ? el.getAttribute('data-en') : el.getAttribute('data-ko');
+        el.innerHTML = newContent;
+      });
+  
+      const button = document.querySelector('.button button');
+      button.textContent = isKorean ? 'English' : '한국어';
+  
+      document.documentElement.lang = isKorean ? 'en' : 'ko';
+  
+      isKorean = !isKorean;
+    }
+  </script>
+
 </body>
 </html>
+
