@@ -1,262 +1,466 @@
 <!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by parkseungbinbeen (http://jsbin.com/nuzohoj/36/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
 <meta name="robots" content="noindex">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by yeonmi257 (http://jsbin.com/wedekuw/16/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
   <title>The Beatles Times</title>
-  <style>
-    body {
-      background-color: #111;
-      margin: 0;
-      padding: 40px 0;
-      font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
-      color: #111;
-    }
+  
+</head>
+  
+<style>
+  body {
+    background-color: #111;
+    margin: 0;
+    padding: 40px 0;
+    font-family: 'Baskerville', 'Garamond', 'Georgia', serif;
+    color: #111;
+  }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      background-color: #e8e8e8;
-      padding: 0 30px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #e8e8e8;
+    padding: 0 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
 
-    header {
-      border-bottom: 2px solid black;
-      padding: 20px 0;
-    }
+  header {
+    border-bottom: 2px solid black;
+    padding: 20px 0;
+    text-align: center;
+  }
 
-    header h1 {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 6rem;
-      margin-bottom: 5px;
-      text-align: center;
-    }
+  header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(2rem, 6vw, 6rem);
+    margin-bottom: 5px;
+  }
 
-    header p {
-      font-size: 1rem;
-      font-style: italic;
-      text-align: center;
-    }
+  header p {
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+  }
 
-    .reporter {
-      text-align: right;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
+ /* h2와 hr 태그를 4그리드 한 줄로 차지하게 만들기 */
+.newspaper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 30px 0;
+}
 
+h2, hr {
+  grid-column: span 4; /* 4그리드 전체를 차지하도록 설정 */
+  margin: 0;
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-align: left;
+}
+
+hr {
+  border: solid 1px #111;
+  margin-top: 10px;
+}
+  .light{
+  border: none;         /* 기본 border 제거 */
+  border-top: 1px solid #808080;  /* 얇은 선 (원하는 색으로 변경 가능) */
+}
+  
+  .img1 {
+    max-width: 100%;
+    height: auto;
+    justify-self: center;
+    grid-column: span 2;
+    aspect-ratio: 4 / 3;
+    background-color: #f2f2f2;
+  }
+  
+    .img2 {
+    max-width: 92%;
+      height: auto;
+    justify-self: center;
+    grid-column: span 2;
+    aspect-ratio: 4 / 4;
+    background-color: #f2f2f2;
+  }
+
+  .article, .article3, .article4, .article5, .article6, .article7 {
+    padding: 10px;
+
+  }
+  .article{grid-column: span 2;
+  
+  padding: 10px;
+  font-size: 1rem;  /* 동일한 폰트 크기 */
+  line-height: 1.5;  /* 동일한 줄 높이 */
+  text-align: justify;  /* 동일한 정렬 방식 */
+}
+
+  .article3 {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 내부에 3칸 설정 */
+  gap: 20px; /* 원하는 여백 */
+}
+
+.article3 h3 {
+  grid-column: span 3; /* 제목은 전체 너비 */
+}
+
+.article3 .a31,
+.article3 .a32,
+.article3 .a33 {
+  margin: 0; /* 필요 시 여백 제거 */
+}
+
+  .article4 {
+    grid-column: span 1;
+    grid-row: span 3;
+    border: solid black 1px;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+
+  .article5 {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  
+     .article6 {
+    grid-column: span 2;
+    display: grid;
+       grid-template-columns: repeat(2,1fr);
+       gap:20px
+  }
+  
+
+.article6 h3 {
+  grid-column: span 2; /* 제목은 전체 너비 */
+}
+  .article7 {
+  grid-column: span 2;
+  padding: 10px;
+  background-color: #e8e8e8;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.article7 h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 10px;
+}
+  
+  .article7 p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+.article6 .a61,
+.article6 .a62,
+{
+  margin: 0; /* 필요 시 여백 제거 */
+}
+
+  h2, h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 10px;
+  }
+
+  p, ol {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  footer {
+    border-top: 2px solid black;
+    padding: 30px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .member-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-top: 1px solid #aaa;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+  }
+
+  .member-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border-radius: 4px;
+  }
+
+  .member-box p {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .member-box strong {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* 모바일 대응 */
+  @media (max-width: 768px) {
     .newspaper {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      padding: 30px 0;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
-    .article {
-      padding: 10px;
-      border-bottom: 1px solid #bbb;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
+    /* 순서 변경 */
+    .img1     { order: 1; }
+    .article { order: 2; }
+    .article3 { order: 3; }
+    .article4 { order: 4; grid-column: auto; grid-row: auto; }
+    .article5 { order: 5; grid-column: auto; grid-row: auto; }
+    .article6 { order: 6; grid-column: auto; grid-row: auto; }
+    .img2     { order: 7; }
 
-    .article.wide {
-      grid-column: span 4;
-      border-bottom: 2px solid #aaa;
-      margin-bottom: 20px;
-    }
-
-    .article img {
+    /* 모바일에서 이미지와 텍스트의 크기 조정 */
+    .img1, .img2 {
+      aspect-ratio: 1 / 1;
+      max-width: 100%;
       width: 100%;
-      margin: 10px 0;
-      filter: grayscale(100%);
-    }
-
-    .article h3 {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 5px;
-    }
-
-    .article strong {
-      font-size: 1.1rem;
-      display: block;
-      margin-bottom: 6px;
-      color: #000;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    footer {
-      border-top: 2px solid black;
-      padding: 30px 0;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .member-box {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px;
-      border-top: 1px solid #aaa;
-      background-color: #e8e8e8;
-      border-radius: 8px;
-    }
-
-    .member-box img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      filter: grayscale(100%);
-      border-radius: 4px;
-    }
-
-    .member-box p {
-      margin: 0;
-      font-size: 0.85rem;
-    }
-
-    .member-box strong {
-      font-size: 1rem;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .chronicle-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding-top: 20px;
-    }
-
-    .chronicle-entry {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .chronicle-entry img {
-      width: 100px;
       height: auto;
-      object-fit: cover;
-      filter: grayscale(100%);
-      border-radius: 4px;
     }
-  </style>
+  }
+  
+  .button{   
+    position: fixed;
+  top: 0px;
+left: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  z-index: 1000;}
+  
+  ol li {
+  margin-bottom: 15px; /* li 간 간격을 10px로 설정 */
+}
+  
+</style>
+
 </head>
 <body>
+ <div class="button">
+  <button onclick="toggleLanguage()">English</button>
+</div>
+  
   <div class="container">
     <header>
       <h1>THE BEATLES TIMES</h1>
       <p>Liverpool, Monday May 27, 2025</p>
+
     </header>
 
-    
-      <!-- 사건 연대기 -->
-      <section class="article wide">
-        <h2>The Beatles Incident News</h2>
-        <p><em>Chronicle of Moments That Changed History</em></p>
-        <p class="reporter">By Seungbin Park</p>
+    <main class="newspaper">
 
-        <div class="chronicle-grid">
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>July 15, 1958</h3>
-                <strong>John Lennon's Mother Dies</strong>
-                <p>Julia Lennon died in a car accident, which deeply impacted young John and influenced later songs like "Julia".</p>
-              </div>
-              <img src="https://i.imgur.com/60bRc9S.jpg">
-            </div>
-          </div>
+        <h2 data-en="The Beatles Incident News" data-ko="비틀즈 사건사고 뉴스">The Beatles Incident News</h2>
+        <hr class="light">
+     
+       
+              <img class="img1" src="https://i.imgur.com/uu6jfql.png" alt="The Beatles"/>
 
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>August 17, 1960</h3>
-                <strong>The Beatles Begin First Hamburg Shows</strong>
-                <p>Their time in Hamburg was filled with tough conditions, arrests, and various incidents during club performances.</p>
-              </div>
-              <img src="https://i.imgur.com/uu6jfql.png">
-            </div>
-          </div>
+      <section class="article">
 
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>March 4, 1966</h3>
-                <strong>“More Popular Than Jesus”</strong>
-                <p>John Lennon’s comment led to protests and record burnings in the U.S. after being reprinted in <em>Datebook</em>.</p>
-              </div>
-              <img src="https://i.imgur.com/R2cbWK0.jpg">
-            </div>
-          </div>
+        <h3 data-en="We're More Popular Than Jesus?" data-ko="비틀즈, 예수보다 유명하다? – 존 레논 발언에 전 세계 기독교계 반발">We're More Popular Than Jesus?</h3>
+        <p data-en="In 1956, John Lennon formed a skiffle group called The Quarrymen with friends from Quarry Bank High School in Liverpool. 
+          On July 6, 1957, Paul McCartney joined the band, and in 1958, George Harrison became the lead guitarist. 
+          By 1960, the band had begun performing in Hamburg and adopted the name 'The Beatles' 
+          In February 1964, The Beatles appeared on The Ed Sullivan Show, captivating around 73 million viewers. 
+          Soon after, they occupied the top five spots on the Billboard Hot 100—a record still unbeaten today. 
+          Their success led the way for the 'British Invasion,' paving the path for other UK bands in the American market." data-ko="런던 – 세계적인 록 밴드 비틀즈의 멤버 존 레논이 우리는 지금 예수보다 더 유명하다는 발언을 하며 논란의 중심에 섰다. 이 발언은 영국에서 큰 반향을 일으키지 않았으나, 미국 남부에서 재조명되면서 강한 반발을 일으켰다.
 
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>August 27, 1967</h3>
-                <strong>Brian Epstein Dies</strong>
-                <p>The Beatles’ manager passed away from an overdose, leaving the group with uncertainty and shifting leadership.</p>
-              </div>
-              <img src="https://i.imgur.com/9GNt1tI.jpg">
-            </div>
-          </div>
+미국 내 일부 라디오 방송국은 비틀즈 음악을 전면 금지했으며, 앨범 소각 시위가 벌어지기도 했다. KKK까지 가세한 위협 속에서 비틀즈는 미국 투어 중 위기감을 느끼고 기자회견을 자청했다.
 
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>April 10, 1970</h3>
-                <strong>Breakup Announcement</strong>
-                <p>Paul McCartney confirmed The Beatles’ breakup, shocking fans and the press across the globe.</p>
-              </div>
-              <img src="https://i.imgur.com/3DAPzqg.jpg">
-            </div>
-          </div>
+기독교를 비하하려는 의도는 없었습니다. – 존 레논
+이 사건은 결국 밴드가 활동 방향을 라이브에서 스튜디오 중심으로 전환하는 계기가 되었다.">
+          London – Beatle John Lennon has found himself in hot water after claiming, “We’re more popular than Jesus now.” Though initially published in a UK magazine with little reaction, the quote caused an uproar when reprinted in the United States, particularly in the deeply religious South.
+          <br>Radio stations in the U.S. banned Beatles music. Album-burning rallies followed, and even the Ku Klux Klan joined protests. The Beatles, alarmed by the escalation during their U.S. tour, held a press conference where Lennon clarified:
+          <br>“I’m not saying we’re better or greater… I’m sorry I opened my mouth.”
+          <br>This incident contributed heavily to the Beatles’ decision to quit touring and focus exclusively on studio recordings.
+          
+        </p>
+      </section>
+     
+      <section class="article3">
+        <h3 data-en="Beatles Snub Philippine First Lady – Chaos Ensues at Airport" data-ko="비틀즈, 필리핀 대통령궁 초청 거절 후 봉변…공항 탈출 소동">Beatles Snub Philippine First Lady – Chaos Ensues at Airport</h3>
+        <p class="a31" data-en="Manila – Tensions flared during the Beatles’ tour in the Philippines when they failed to appear at a breakfast reception hosted by First Lady Imelda Marcos. The invitation was informal and never confirmed by the band or their manager.
 
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>December 8, 1980</h3>
-                <strong>John Lennon Assassinated</strong>
-                <p>Mark David Chapman shot Lennon outside the Dakota Building in NYC, sending shockwaves worldwide.</p>
-              </div>
-              <img src="https://i.imgur.com/grVrRWQ.jpg">
-            </div>
-          </div>
+Philippine media portrayed the absence as a grave insult to the Marcos regime. In retaliation, government security was withdrawn from the band’s hotel and airport passage was obstructed.
 
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>November 29, 2001</h3>
-                <strong>George Harrison Dies After Cancer Battle (Age 58)</strong>
-                <p>George passed away after a long battle with cancer, leaving fans heartbroken and in mourning.</p>
-              </div>
-              <img src="https://i.imgur.com/BM2L9XA.jpg">
-            </div>
-          </div>
+“They could have been harmed. It’s a miracle they got out,” said a local fan.
+The frightening experience led to the Beatles’ permanent withdrawal from live touring.
 
-          <div class="article">
-            <div class="chronicle-entry">
-              <div>
-                <h3>November 2, 2023</h3>
-                <strong>Final Beatles Song Released</strong>
-                <p>“Now and Then” completed with AI using Lennon’s demo, marks the official last song by the band.</p>
-              </div>
-              <img src="https://i.imgur.com/q6DZClW.jpg">
-            </div>
-          </div>
-        </div>
+" data-ko="마닐라 – 전 세계적 슈퍼스타 비틀즈가 필리핀 마닐라에서 공연 후 대통령궁 초청을 거절한 것을 계기로, 마르코스 정권의 보복성 대응에 시달렸다.
+
+제1부인 이멜다 마르코스는 비틀즈를 초청했으나, 멤버들은 비공식 초청이라는 이유로 일정을 수락하지 않았다. 현지 언론은 이 사건을 “국가적 모욕”으로 보도했고, 호텔 보안 철수 및 공항 검문 강화 등 사실상의 정부 차원 압박이 이어졌다.
+
+한 팬은 말했다.
+
+“그들이 떠날 수 있었던 것 자체가 기적입니다.”
+비틀즈는 이후 라이브 투어를 중단하기로 결정했다.">
+          Manila – Tensions flared during the Beatles’ tour in the Philippines when they failed to appear at a breakfast reception hosted by First Lady Imelda Marcos. The invitation was informal and never confirmed by the band or their manager.
+
+Philippine media portrayed the absence as a grave insult to the Marcos regime. In retaliation, government security was withdrawn from the band’s hotel and airport passage was obstructed.
+
+“They could have been harmed. It’s a miracle they got out,” said a local fan.
+The frightening experience led to the Beatles’ permanent withdrawal from live touring.
+
+
+
+        </p>
+          <p class="a32" data-en="Their 1967 album Sgt. Pepper's Lonely Hearts Club Band is considered a landmark concept album that elevated pop music into an art form.
+        The Beatles have sold over 600 million records globally, making them the best-selling band in history." data-ko="
+1967년 발매된 비틀즈의 앨범 'Sgt. Pepper's Lonely Hearts Club Band'는 팝 음악을 예술의 경지로 끌어올린 획기적인 콘셉트 앨범으로 평가받고 있습니다.
+비틀즈는 전 세계적으로 6억 장 이상의 음반을 판매하며 역사상 가장 많은 음반을 판매한 밴드로 기록되었습니다.">
+          
+          Their 1967 album Sgt. Pepper's Lonely Hearts Club Band is considered a landmark concept album that elevated pop music into an art form.
+        The Beatles have sold over 600 million records globally, making them the best-selling band in history. 
+
+        </p>
+          <p class="a33" data-en="They hold 20 Billboard No. 1 singles and 19 No. 1 albums. 
+          They also received a Grammy Lifetime Achievement Award (2014) and have been inducted into the Grammy Hall of Fame multiple times." data-ko="
+그들은 빌보드 1위 싱글 20곡과 1위 앨범 19곡을 보유하고 있습니다.
+또한 2014년 그래미 평생공로상을 수상했으며, 그래미 명예의 전당에 여러 차례 헌액되었습니다.">
+ 
+          They hold 20 Billboard No. 1 singles and 19 No. 1 albums. 
+          They also received a Grammy Lifetime Achievement Award (2014) and have been inducted into the Grammy Hall of Fame multiple times.
+        </p>
       </section>
 
-     
-    <!-- Footer -->
+      <section class="article4">
+    <h3 data-en="Breaking News: The Beatles Release New Song ‘Now and Then’ in 2023, Sparking Worldwide Excitement" data-ko="비틀즈, 2023년 신곡 'Now and Then' 공개하며 전 세계 팬들 환호">Breaking News: The Beatles Release New Song ‘Now and Then’ in 2023, Sparking Worldwide Excitement</h3>
+    <br>
+    <p class="a31" data-en="On November 3, 2023, the legendary British band The Beatles officially released a new song titled ‘Now and Then,’ their first in over 50 years, capturing the attention of music fans around the globe.
+
+The track is based on an unfinished demo recorded by the late John Lennon in the late 1970s and was completed by surviving members Paul McCartney and Ringo Starr, with contributions from George Harrison’s archival recordings. Using the latest sound technology and AI, Lennon’s vocals and instrumental parts were reassembled, creating a fresh addition to The Beatles’ iconic catalog.
+
+Paul McCartney expressed his excitement, saying, “It’s deeply moving to bring The Beatles’ music to fans in such a new way. ‘Now and Then’ is a very special song for all of us.”
+
+The new single has been released not only on digital streaming platforms but also as a limited edition vinyl, receiving enthusiastic responses from Beatles fans worldwide.
+
+This release marks the first new Beatles song since the band officially disbanded in 1970, opening a new chapter in music history.
+" data-ko="속보: 2023년 11월 3일, 전설적인 영국 밴드 비틀즈가 50여 년 만에 신곡 ‘Now and Then’을 공식 발표해 전 세계 음악 팬들의 큰 관심을 모았다.
+
+이번 곡은 고(故) 존 레논이 1970년대 말에 녹음한 미완성 데모를 기반으로 하였으며, 폴 매카트니, 링고 스타, 조지 해리슨의 사후 멤버들에 의해 완성되었다. 최신 음향 기술과 AI를 활용해 존 레논의 보컬과 악기 연주를 재조합함으로써, 기존에 알려지지 않았던 비틀즈의 새로운 음원을 탄생시켰다.
+
+폴 매카트니는 “비틀즈의 음악이 이렇게 새로운 방식으로 팬들에게 다가갈 수 있어 매우 감격스럽다”며 “‘Now and Then’은 우리 모두에게 의미 있는 곡”이라고 소감을 전했다.
+
+이 신곡은 디지털 음원 플랫폼뿐 아니라 한정판 비닐 레코드로도 출시되어, 전 세계 비틀즈 팬들 사이에서 뜨거운 반응을 얻고 있다.
+
+이번 발표는 비틀즈가 1970년 공식 해체 이후 53년 만에 공개하는 신곡으로, 음악 역사에 새로운 장을 열었다는 평가를 받고 있다.">
+          On November 3, 2023, the legendary British band The Beatles officially released a new song titled ‘Now and Then,’ their first in over 50 years, capturing the attention of music fans around the globe.
+      <br>
+
+The track is based on an unfinished demo recorded by the late John Lennon in the late 1970s and was completed by surviving members Paul McCartney and Ringo Starr, with contributions from George Harrison’s archival recordings. Using the latest sound technology and AI, Lennon’s vocals and instrumental parts were reassembled, creating a fresh addition to The Beatles’ iconic catalog.
+      <br>
+
+Paul McCartney expressed his excitement, saying, “It’s deeply moving to bring The Beatles’ music to fans in such a new way. ‘Now and Then’ is a very special song for all of us.”
+      <br>
+
+The new single has been released not only on digital streaming platforms but also as a limited edition vinyl, receiving enthusiastic responses from Beatles fans worldwide.
+      <br>
+
+This release marks the first new Beatles song since the band officially disbanded in 1970, opening a new chapter in music history.
+  </section>
+
+<section class="article5">
+        <h3 data-en="Paul Is Dead? – Conspiracy Theory Takes America by Storm" data-ko="폴 맥카트니는 이미 죽었다?… 루머 확산에 EMI와 팬들 혼란">"Paul Is Dead?" – Conspiracy Theory Takes America by Storm</h3>
+        <p data-en="Chicago – A bizarre theory has gone viral across the U.S.: Paul McCartney is dead, and has been replaced by a look-alike. Dubbed “Paul is Dead,” the rumor is fueled by fans analyzing Beatles lyrics and album artwork for “clues.”
+
+Particular attention has been given to the Abbey Road album cover, where Paul is barefoot and out of step with the others—interpreted as a symbolic funeral procession.
+
+Neither the band nor EMI Records have officially commented. Some fans see it as performance art; others demand answers."
+           data-ko="시카고 – 폴 맥카트니가 사실은 이미 사망했고 대역이 활동 중이라는 'Paul is Dead' 음모론이 미국 전역을 강타하고 있다.
+
+앨범 표지, 가사 속 '단서' 해석이 인터넷과 캠퍼스를 중심으로 빠르게 퍼지고 있으며, “Abbey Road” 자켓에서 폴만 맨발이라는 점 등이 주요 근거로 제시되고 있다.
+
+비틀즈 측은 공식 입장을 내지 않았으며, 일부 팬은 오히려 이 해프닝을 “하나의 퍼포먼스”로 즐기고 있다.">Chicago – A bizarre theory has gone viral across the U.S.: Paul McCartney is dead, and has been replaced by a look-alike. Dubbed “Paul is Dead,” the rumor is fueled by fans analyzing Beatles lyrics and album artwork for “clues.”
+          <br>Particular attention has been given to the Abbey Road album cover, where Paul is barefoot and out of step with the others—interpreted as a symbolic funeral procession.
+          <br>Neither the band nor EMI Records have officially commented. Some fans see it as performance art; others demand answers. 
+          
+        </p>
+    </section>
+      <section class="article6">
+        <h3 data-en="Beatles Break Up – McCartney Confirms Departure" data-ko="비틀즈, 해체 공식화…폴 “음악은 계속될 것”">Beatles Break Up – McCartney Confirms Departure</h3>
+        <p class="a61" data-en=" London – Paul McCartney’s new solo album came with a bombshell: he was no longer a member of The Beatles. What many suspected became official—the band that changed music history was no more.
+
+Conflicts over creative direction, management, and personal relationships—including John Lennon’s bond with Yoko Ono—are believed to have fueled the split.
+
+“This is not the end. It’s just another beginning,” said McCartney."
+           data-ko="런던 – 폴 매카트니가 자신의 솔로 앨범과 함께 비틀즈의 해체를 언급하며 전 세계 팬들의 가슴을 울렸다.
+보도자료 속 “나는 더 이상 비틀즈의 멤버가 아니다”라는 문장은 곧 그룹의 공식 해산 선언으로 해석됐다.
+
+밴드 내부의 경영권 분쟁, 예술적 갈등, 그리고 요코 오노와 존 레논의 관계 등 복합적 원인이 뒤엉킨 결과라는 분석이 지배적이다.
+
+“이건 끝이 아니다. 단지 다른 출발일 뿐.” – 폴 매카트니">In their later years, The Beatles evolved through bold experimentation and genre expansion. 
+          London – Paul McCartney’s new solo album came with a bombshell: he was no longer a member of The Beatles. What many suspected became official—the band that changed music history was no more.
+
+Conflicts over creative direction, management, and personal relationships—including John Lennon’s bond with Yoko Ono—are believed to have fueled the split.
+
+“This is not the end. It’s just another beginning,” said McCartney.
+          </p>
+        
+    
+      </section>
+      
+      <section class="article7">
+  <h3 data-en="George Harrison’s Spiritual Journey – Finding Peace Through India" data-ko="조지 해리슨, 인도에서의 영적 여정으로 평화를 찾다">George Harrison’s Spiritual Journey – Finding Peace Through India</h3>
+  <p data-en="In the late 1960s, George Harrison traveled to India and became a disciple of Indian classical music and spirituality. His interest in the sitar led him to study with Ravi Shankar, and his faith in Hindu philosophy deeply influenced the Beatles’ music.
+
+Tracks like ‘Within You Without You’ reflect this period of introspection and cultural fusion. Harrison said, 'The more I learned, the more I wanted to go deeper. It was a true awakening.'"
+     data-ko="1960년대 후반, 조지 해리슨은 인도를 방문해 인도의 고전 음악과 영성에 심취했다. 시타르에 대한 관심은 그를 라비 샹카르와의 만남으로 이끌었고, 힌두 철학에 대한 신념은 비틀즈 음악에 깊은 영향을 미쳤다.
+
+‘Within You Without You’ 같은 곡은 이 시기의 내면 탐색과 문화 융합을 반영한다. 해리슨은 말했다. '배우면 배울수록 더 깊이 빠져들게 됐다. 진정한 각성이었다.'">
+    In the late 1960s, George Harrison traveled to India and became a disciple of Indian classical music and spirituality. His interest in the sitar led him to study with Ravi Shankar, and his faith in Hindu philosophy deeply influenced the Beatles’ music.
+
+    Tracks like ‘Within You Without You’ reflect this period of introspection and cultural fusion. Harrison said, "The more I learned, the more I wanted to go deeper. It was a true awakening."
+  </p>
+</section>
+      
+      <img class="img2" src="https://i.imgur.com/lM6ZgmJ.jpeg">
+    </main>
+
     <footer>
       <div class="footer-grid">
         <div class="member-box">
@@ -278,5 +482,57 @@
       </div>
     </footer>
   </div>
+  
+
+<script>
+ let isKorean = false;
+
+
+
+      // 페이지 로드 시 바로 "Translate to Korean" 텍스트로 변환
+      toggleLanguage();
+    });
+
+    // 언어 전환 함수
+    function toggleLanguage() {
+      const allElements = document.querySelectorAll('[data-en][data-ko]');
+      allElements.forEach(el => {
+        const htmlContent = isKorean ? el.getAttribute('data-ko') : el.getAttribute('data-en');
+        el.innerHTML = htmlContent;
+      });
+
+      // 버튼 텍스트를 상태에 맞게 변경
+      const button = document.querySelector('.button button');
+      button.textContent = isKorean ? '한국어' : 'English';
+
+      // 페이지의 lang 속성 변경
+      document.documentElement.lang = isKorean ? 'en' : 'ko';
+
+      // 상태 변경
+      isKorean = !isKorean;
+    }
+  
+</script>
+<script id="jsbin-javascript">
+
+
+let isKorean = false;
+
+function toggleLanguage() {
+  const allElements = document.querySelectorAll('[data-en][data-ko]');
+  allElements.forEach(el => {
+    // 텍스트만 교체하고 HTML 구조는 그대로 유지
+    const newContent = isKorean ? el.getAttribute('data-ko') : el.getAttribute('data-en');
+    el.textContent = newContent;  // 텍스트만 교체
+  });
+
+  // 버튼 텍스트도 함께 바꿔주기
+  const button = document.querySelector('.button button');
+  button.textContent = isKorean ? '한국어' : 'English';
+
+  isKorean = !isKorean;
+}
+</script>
 </body>
 </html>
+
