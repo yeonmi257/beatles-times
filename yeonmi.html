@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -119,13 +118,14 @@
       margin-bottom: 10px;
     }
 
-       .square-image {
+    .square-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
   margin-bottom: 10px;
+  aspect-ratio: 1 / 1;
 }
+
 
     .full-poster {
       border: 1px solid #222;
@@ -159,8 +159,10 @@
     }
 
     a.image-hover-wrapper {
-      display: inline-block;
-    }
+  display: block;
+  width: 100%;
+}
+
 
     a.image-hover-wrapper img {
       transition: filter 0.3s ease, opacity 0.3s ease;
