@@ -40,11 +40,15 @@
     }
 
     header h1 {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 6rem;
-      margin-bottom: 5px;
-      text-align: center;
-    }
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(2rem, 10vw, 6rem); /* 최소 2rem ~ 최대 6rem 사이에서 화면 비율에 따라 조절 */
+  margin-bottom: 5px;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 
     header p {
       font-size: 1rem;
@@ -128,15 +132,16 @@
     }
 
     .member-box p {
-      margin: 0;
-      font-size: 0.85rem;
-    }
+  margin: 0;
+  font-size: clamp(0.6rem, 1.8vw, 0.85rem);
+}
 
-    .member-box strong {
-      font-size: 1rem;
-      display: block;
-      margin-bottom: 4px;
-    }
+.member-box strong {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  display: block;
+  margin-bottom: 4px;
+}
+
 
  @media screen and (max-width: 768px) {
   .top-row,
