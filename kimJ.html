@@ -14,7 +14,8 @@ Released under the MIT license: http://jsbin.mit-license.org
   <meta name="robots" content="noindex">
   <title>The Beatles Times</title>
   
-</head>
+</head> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
   
 <style>
   body {
@@ -25,6 +26,10 @@ Released under the MIT license: http://jsbin.mit-license.org
     color: #111;
   }
 
+  .ko {
+  font-family: 'Noto Serif KR', serif;
+}
+  
   .container {
     max-width: 1200px;
     margin: auto;
@@ -211,32 +216,26 @@ hr {
     margin-bottom: 4px;
   }
 
-  /* 모바일 대응 */
-  @media (max-width: 768px) {
-    .newspaper {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    /* 순서 변경 */
-    .img1     { order: 1; }
-    .article { order: 2; }
-    .article3 { order: 3; }
-    .article4 { order: 4; grid-column: auto; grid-row: auto; }
-    .article5 { order: 5; grid-column: auto; grid-row: auto; }
-    .article6 { order: 6; grid-column: auto; grid-row: auto; }
-    .img2     { order: 7; }
-
-    
-    .img1, .img2 {
-      aspect-ratio: 1 / 1;
-      max-width: 100%;
-      width: 100%;
-      height: auto;
-    }
-  }
   
+@media (max-width: 768px) {
+  .newspaper {
+    font-size: 0.95rem;
+  }
+
+  .newspaper img, img2{
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .newspaper {
+    font-size: 0.85rem;
+  }
+
+  .newspaper img {
+    width: 100%;
+  }
+}
   .button{   
     position: fixed;
   top: 0px;
@@ -260,7 +259,7 @@ left: 5px;
   <div class="container">
     <header>
       <h1>THE BEATLES TIMES</h1>
-      <p>Liverpool, Monday May 27, 2025</p>
+      <p>By Kim jeong-a, 10th June 2025</p>
 
     </header>
 
@@ -442,34 +441,29 @@ left: 5px;
   
 
 <script>
- let isKorean = false;
+let isKorean = false;
+
+function toggleLanguage() {
+  const allElements = document.querySelectorAll('[data-en][data-ko]');
+  allElements.forEach(el => {
+    const newContent = isKorean ? el.getAttribute('data-ko') : el.getAttribute('data-en');
+    el.textContent = newContent;
 
 
-
-      
-      toggleLanguage();
-    });
-
-    
-    function toggleLanguage() {
-      const allElements = document.querySelectorAll('[data-en][data-ko]');
-      allElements.forEach(el => {
-        const htmlContent = isKorean ? el.getAttribute('data-ko') : el.getAttribute('data-en');
-        el.innerHTML = htmlContent;
-      });
-
-     
-      const button = document.querySelector('.button button');
-      button.textContent = isKorean ? '한국어' : 'English';
-
-      
-      document.documentElement.lang = isKorean ? 'en' : 'ko';
-
-     
-      isKorean = !isKorean;
+    if (isKorean) {
+      el.classList.add('ko');
+    } else {
+      el.classList.remove('ko');
     }
+  });
+
+
+  const button = document.querySelector('.button button');
+  button.textContent = isKorean ? '한국어' : 'English';
+
+  isKorean = !isKorean;
+}
   
 </script>
-<script src="kimJ_1.js"></script>
 </body>
 </html>
