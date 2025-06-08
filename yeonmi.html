@@ -194,6 +194,7 @@
   font-size: 0.9rem;
   background-color: #e8e8e8;
   color: #222;
+border: 1px solid #aaa;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -202,93 +203,43 @@
   background-color: #444;
 }
     
-    @media screen and (max-width: 768px) {
-      .container {
-        padding: 0 15px;
-      }
-
-      header h1 {
-        font-size: 3rem;
-      }
-
-      .headline h2, .main-article h2 {
-        font-size: 2.5rem;
-      }
-
-      .main-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .column-text, .article.columns p {
-        column-count: 1;
-       
-      }
-
-      .three-col {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .member-box {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .member-box img {
-        width: 60px;
-        height: 60px;
-      }
-
-      .main-article h3, .article h3, .article.columns h4 {
-        font-size: 1.5rem;
-      }
-
-      .main-article p, .article p {
-        font-size: 0.9rem;
-      }
-
-      .main-image, .full-poster {
-        aspect-ratio: auto;
-      }
-]
-   
-
-
-  
-@media screen and (max-width: 768px) {
-  .main-grid,
-  .three-col {
-    grid-template-columns: 1fr !important;
-    gap: 20px;
+   @media screen and (max-width: 768px) {
+  .container {
+    padding: 0 15px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px;
+  header h1 {
+    font-size: 3rem;
   }
 
-  .column-text,
-  .article.columns p {
-    column-count: 1 !important;
-  }
-
-  .main-article h2,
   .headline h2,
+  .main-article h2,
   .main-article h3,
   .article h3,
   .article.columns h4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .main-article p,
   .article p {
-    font-size: 0.9rem !important;
+    font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  .main-grid,
+  .three-col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .column-text,
+  .article.columns p {
+    column-count: 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .member-box {
@@ -299,6 +250,11 @@
   .member-box img {
     width: 60px;
     height: 60px;
+  }
+
+  .main-image,
+  .full-poster {
+    aspect-ratio: auto;
   }
 }
 </style>
