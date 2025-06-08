@@ -233,8 +233,24 @@
         aspect-ratio: auto;
       }
 
-      .button{
-        align-items: center;}
+   .button {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button button {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button button:hover {
+  background-color: #444;
+}
 
       .article.wide {
   grid-column: span 3;
@@ -424,7 +440,7 @@ Produced by George Martin, the record fused tape loops, orchestral arrangements,
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       } else {
-        entry.target.classList.remove('visible'); // 🔁 다시 숨김 처리
+        entry.target.classList.remove('visible');
       }
     });
   }, { threshold: 0.1 });
