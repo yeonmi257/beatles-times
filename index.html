@@ -19,6 +19,7 @@
       background-color: #e8e8e8;
       padding: 0 30px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      overflow-x: hidden;
     }
 
     .headline {
@@ -137,17 +138,27 @@
       margin-bottom: 4px;
     }
 
-    @media screen and (max-width: 767px) {
-  .top-row,
-  .bottom-row {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
-  a.box:hover {
-    background-color: inherit;
+  .member-box {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
-      .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  .member-box p {
+    font-size: 0.75rem;
+    word-break: keep-all;
+  }
+
+  .member-box img {
+    width: 60px;
+    height: 60px;
   }
 }
     
