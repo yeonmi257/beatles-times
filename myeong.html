@@ -22,6 +22,18 @@ html:lang(en) body {
       font-size: 1rem;
     }
 
+    .fade-in-section {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: all 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
     .container {
       max-width: 1200px;
       margin: auto;
@@ -117,6 +129,7 @@ html:lang(en) body {
       gap: 25px;
       margin-top: 10px;
     }
+
 
     h2, h3 {
       margin: 0 0 10px;
@@ -219,13 +232,13 @@ html:lang(en) body {
       <button onclick="toggleLanguage()">English</button>
     </div>
 
-    <section class="headline">
+    <section class="headline fade-in-section">
       <h2 data-en="Where Memory Lingers: <br>Strawberry Fields" data-ko="기억이 머무는 곳:<br>스트로베리 필드">Where Memory Lingers:<br>Strawberry Fields</h2>
 
     </section>
 
     <main class="newspaper">
-      <section class="article">
+      <section class="article fade-in-section">
         <h3 data-en="Where Memory Begins, Beyond the Quiet Fields of Strawberry Dreams,
         In the Whisper of Time’s Gentle Embrace" data-ko="기억이 시작되는 곳, 조용한 딸기밭 너머로 — 시간의 속삭임에 실려">Where Memory Begins, Beyond the Quiet Fields of Strawberry Dreams,
         In the Whisper of Time’s Gentle Embrace</h3>
@@ -240,7 +253,7 @@ html:lang(en) body {
         ">Nestled in the verdant outskirts of Woolton, Liverpool, lies a modest red-brick building whose unassuming façade belies its global significance. Strawberry Field was originally a Salvation Army children’s home, established in 1936 to provide refuge and camaraderie for local families in need. It was here, amid the walled garden and gates that creaked in the gentle Liverpool breeze, that a young John Lennon first glimpsed a world beyond his childhood home. More than simply a charity-run institution, it represented a private kingdom of imagination, sealed off from the hardships of the real world.</p>
       </section>
 
-      <section class="article wide2">
+      <section class="article wide2 fade-in-section">
         <a href="https://www.centralparknyc.org/locations/strawberry-fields" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Straberry_field_sign.jpg/500px-Straberry_field_sign.jpg" alt="Strawberry Fields Sign"></a>
         <h1 data-en="Strawberry Fields Forever: A Place Where Memory Sings" data-ko="스트로베리 필즈 포에버: 기억이 노래하는 곳
         ">Strawberry Fields Forever: A Place Where Memory Sings</h1>
@@ -257,7 +270,7 @@ html:lang(en) body {
         </div>
       </section>
 
-      <section class="article">
+      <section class="article fade-in-section">
         <a href="https://youtu.be/HtUH9z_Oey8?si=X08vDBCOYgJ6TQJT" target="_blank"><img src="https://i.namu.wiki/i/NqnUwLyba-gJdL1gkb8_4sQxicIeiwReECcsRe1DBPGs4PSASwerO9VzniVJ9X3HesVFLE0GBG_IDjAAb1Kdgw.jpg" alt="Strawberry Field Sign"><a>
         <h3 data-en="Melodies from the Garden: The Story Behind the Strawberry Fields Album" data-ko="정원의 선율: 스트로베리 필즈 앨범의 뒷이야기
         ">Melodies from the Garden: The Story Behind the Strawberry Fields Album</h3>
@@ -314,8 +327,24 @@ html:lang(en) body {
   
       isKorean = !isKorean;
     }
+  
+    const fadeElems = document.querySelectorAll('.fade-in-section');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    fadeElems.forEach(el => observer.observe(el));
   </script>
-
+  
 </body>
 </html>
+
+
 
