@@ -43,7 +43,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     padding: 20px 0;
     text-align: center;
   }
-  
+
   .logo-link {
   text-decoration: none;   
   color: inherit;         
@@ -59,6 +59,7 @@ Released under the MIT license: http://jsbin.mit-license.org
   header p {
     font-size: 1rem;
     font-style: italic;
+    text-align: center;
   }
 
  
@@ -110,7 +111,7 @@ hr {
     padding: 10px;
 
   }
-  .article{grid-column: span 1;
+  .article1, .article2 {grid-column: span 1;
   
   padding: 10px;
   font-size: 1rem;  
@@ -224,31 +225,88 @@ hr {
 
   
 @media (max-width: 768px) {
-  .newspaper {
-    font-size: 0.95rem;
+  body, h1, p, main, .article, .article2{
+    font-size: 8px;
   }
 
-  .newspaper img, img2{
+  
+  .newspaper img{
     width: 100%;
   }
+  
+   .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+   .img1, {
+    grid-column: span 2;
+  }
+  .img2 {
+    grid-column: span 4;
+  }
+  .article, .article2 {grid-column: span 2;} 
+  
+  .article4, .article5, .article6 {
+    grid-column: span 2;
+  }
 }
+  .a31, .a32, .a33{grid-column: span 2;}
+  
+  .a61, .a62{grid-column: span 2;}
+  
 
 @media (max-width: 480px) {
-  .newspaper {
-    font-size: 0.85rem;
+body, h1, p, main, .article {
+    font-size: 5px;
   }
+  
+
 
   .newspaper img {
     width: 100%;
   }
+    .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+   .img1 {
+    grid-column: span 4;
+  }
+  
+   .img2 {
+    grid-column: span 4;
+  }
+  
+  .article, .article3, .article4, .article5, .article6 {
+    grid-column: span 2;
+  }
 }
+  .a31, .a32, .a33 {grid-column: span 1;}
+  }
+  
+    .a61, .a62{grid-column: span 2;}
+  
   .button{   
-    position: fixed;
-  top: 0px;
-left: 5px;
-  padding: 8px 12px;
-  font-size: 1rem;
-  z-index: 1000;}
+  display: flex;
+  justify-content: center;
+}
+  
+  .button0{  padding: 8px 12px;
+  font-size: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;}
+  
+  
+  .button:hover {
+ 
+  transform: scale(0.95); 
+  transition: all 0.05s ease;
+}
+  
+  .button0:hover{ background-color: #f2f2f2;}
   
   ol li {
   margin-bottom: 15px; 
@@ -258,15 +316,15 @@ left: 5px;
 
 </head>
 <body>
- <div class="button">
-  <button onclick="toggleLanguage()">English</button>
-</div>
+
   
   <div class="container">
     <header>
       <h1><a href="index.html" class="logo-link">THE BEATLES TIMES</a></h1>
-      <p>Written by Kim jeonga on June 10, 2025</p>
-
+      <p>Written by Kim jeong-a June 10, 2025</p>
+ <div class="button">
+  <button class="button0" onclick="toggleLanguage()">English</button>
+</div>
     </header>
 
     <main class="newspaper">
@@ -299,7 +357,7 @@ left: 5px;
           
         </p>
       </section>
-     <section class="article" data-en=" The Beatles influenced not only music but also fashion, art, and societal attitudes. With their long hair, unique clothing, and openness in expression, they became symbols of 1960s youth culture and significantly boosted the global image of British culture."
+     <section class="article2"  data-en=" The Beatles influenced not only music but also fashion, art, and societal attitudes. With their long hair, unique clothing, and openness in expression, they became symbols of 1960s youth culture and significantly boosted the global image of British culture."
               data-ko="비틀즈는 음악뿐만 아니라 패션, 예술, 그리고 사회적 인식에도 영향을 미쳤습니다. 긴 머리, 독특한 의상, 그리고 표현의 개방성으로 1960년대 청소년 문화의 상징이 되었고, 영국 문화의 국제적 이미지를 크게 향상시켰습니다.">
         The Beatles influenced not only music but also fashion, art, and societal attitudes. With their long hair, unique clothing, and openness in expression, they became symbols of 1960s youth culture and significantly boosted the global image of British culture.
       </section>
@@ -333,40 +391,63 @@ left: 5px;
       </section>
 
       <section class="article4">
-    <h3 data-en="5 Fun Facts About The Beatles" data-ko="비틀즈에 대한 5가지 재미있는 사실">5 Fun Facts About The Beatles</h3>
-    <br>
-    <ol>
-      <li data-en="Ringo Starr was not the original drummer!" data-ko="링고 스타는 원래 드러머가 아니었습니다!">
-        <div>
-          <b>Ringo Starr was not the original drummer!</b>
-          <p data-en="The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today."
-             data-ko="비틀즈의 초창기 드러머는 피트 베스트였습니다. 1962년 링고 스타가 그의 자리를 대신하면서 오늘날 우리가 알고 있는 고전적인 라인업이 완성되었습니다.">
-             The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today.
-          </p>
-        </div>
-      </li>
-      <li data-en="The name 'The Beatles' is a pun!" data-ko="'비틀즈'라는 이름은 말장난이에요!">
-        <div><b>The name 'The Beatles' is a pun!</b>
-        <p data-en="The band’s name is a play on words, combining 'beetle' (the insect) with 'beat' (as in music rhythm)."
-           data-ko="밴드 이름은 '딱정벌레'라는 뜻의 'beetle'과 음악의 리듬을 뜻하는 'beat'를 합친 말장난입니다.">The band’s name is a play on words, combining 'beetle' (the insect) with 'beat' (as in music rhythm).</p></div>
-      </li>
-      <li data-en="None of the Beatles could read music!" data-ko="비틀즈 멤버 중 누구도 악보를 읽을 수 없었습니다!">
-        <b>None of the Beatles could read music!</b>
-        <p data-en="John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music."
-           data-ko="존, 폴, 조지, 링고는 모두 독학으로 음악을 익힌 사람들이었고, 전통적인 악보를 읽는 법을 배운 적이 없습니다.">John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music.</p>
-      </li>
-      <li data-en="In 1967, The Beatles did the world’s first satellite TV broadcast!" data-ko="1967년, 비틀즈는 세계 최초로 위성 TV 방송을 했습니다!">
-        <b>In 1967, The Beatles did the world’s first satellite TV broadcast!</b>
-        <p data-en="Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World."
-           data-ko="그들의 노래 'All You Need Is Love'는 Our World 프로그램을 통해 24개국에서 4억 명 이상의 사람들에게 라이브로 공연되고 방송되었습니다.">Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World.</p>
-      </li>
-      <li data-en="The 'Paul is dead' conspiracy theory!" data-ko="'폴은 죽었다'는 음모론!">
-        <b>The 'Paul is dead' conspiracy theory!</b>
-        <p data-en="In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to 'clues' hidden in album covers and lyrics to support the theory."
-           data-ko="1969년, 폴 매카트니가 사망하고 닮은 꼴이 등장했다는 소문이 돌았습니다. 팬들은 이 이론을 뒷받침하기 위해 앨범 커버와 가사에 숨겨진 '단서'를 제시했습니다.">In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to 'clues' hidden in album covers and lyrics to support the theory.</p>
-      </li>
-    </ol>
-  </section>
+        <h3 data-en="5 Fun Facts About The Beatles" data-ko="비틀즈에 대한 5가지 재미있는 사실">
+          5 Fun Facts About The Beatles
+        </h3>
+        <br>
+        <ol>
+          <li>
+            <b data-en="Ringo Starr was not the original drummer!" data-ko="링고 스타는 원래 드러머가 아니었습니다!">
+              Ringo Starr was not the original drummer!
+            </b>
+            <p data-en="The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today."
+               data-ko="비틀즈의 초창기 드러머는 피트 베스트였습니다. 1962년 링고 스타가 그의 자리를 대신하면서 오늘날 우리가 알고 있는 고전적인 라인업이 완성되었습니다.">
+              The Beatles’ early drummer was Pete Best. He was replaced by Ringo Starr in 1962, completing the classic lineup we know today.
+            </p>
+          </li>
+      
+          <li>
+            <b data-en="The name 'The Beatles' is a pun!" data-ko="'비틀즈'라는 이름은 말장난이에요!">
+              The name 'The Beatles' is a pun!
+            </b>
+            <p data-en="The band’s name is a play on words, combining 'beetle' (the insect) with 'beat' (as in music rhythm)."
+               data-ko="밴드 이름은 '딱정벌레'라는 뜻의 'beetle'과 음악의 리듬을 뜻하는 'beat'를 합친 말장난입니다.">
+              The band’s name is a play on words, combining 'beetle' (the insect) with 'beat' (as in music rhythm).
+            </p>
+          </li>
+      
+          <li>
+            <b data-en="None of the Beatles could read music!" data-ko="비틀즈 멤버 중 누구도 악보를 읽을 수 없었습니다!">
+              None of the Beatles could read music!
+            </b>
+            <p data-en="John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music."
+               data-ko="존, 폴, 조지, 링고는 모두 독학으로 음악을 익힌 사람들이었고, 전통적인 악보를 읽는 법을 배운 적이 없습니다.">
+              John, Paul, George, and Ringo were all self-taught musicians and never learned to read traditional sheet music.
+            </p>
+          </li>
+      
+          <li>
+            <b data-en="In 1967, The Beatles did the world’s first satellite TV broadcast!" data-ko="1967년, 비틀즈는 세계 최초로 위성 TV 방송을 했습니다!">
+              In 1967, The Beatles did the world’s first satellite TV broadcast!
+            </b>
+            <p data-en="Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World."
+               data-ko="그들의 노래 'All You Need Is Love'는 Our World 프로그램을 통해 24개국에서 4억 명 이상의 사람들에게 라이브로 공연되고 방송되었습니다.">
+              Their song All You Need Is Love was performed live and broadcast to over 400 million people in 24 countries through the program Our World.
+            </p>
+          </li>
+      
+          <li>
+            <b data-en="The 'Paul is dead' conspiracy theory!" data-ko="'폴은 죽었다'는 음모론!">
+              The 'Paul is dead' conspiracy theory!
+            </b>
+            <p data-en="In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to 'clues' hidden in album covers and lyrics to support the theory."
+               data-ko="1969년, 폴 매카트니가 사망하고 닮은 꼴이 등장했다는 소문이 돌았습니다. 팬들은 이 이론을 뒷받침하기 위해 앨범 커버와 가사에 숨겨진 '단서'를 제시했습니다.">
+              In 1969, a rumor claimed that Paul McCartney had died and been replaced by a lookalike. Fans pointed to 'clues' hidden in album covers and lyrics to support the theory.
+            </p>
+          </li>
+        </ol>
+      </section>
+      
 
 <section class="article5">
         <h3 data-en="The Beatles' Breakup and Its Aftermath" data-ko="비틀즈 해체와 그 여파">The Beatles' Breakup and Its Aftermath</h3>
@@ -398,6 +479,7 @@ left: 5px;
           The Beatles’ legacy remains one of the most influential in music history.
         </p>
     </section>
+      
       <section class="article6">
         <h3 data-en="Key Albums and Musical Evolution" data-ko="주요 앨범과 음악적 진화">Key Albums and Musical Evolution</h3>
         <p class="a61" data-en=" is hailed as a psychedelic rock milestone, with 'Tomorrow Never Knows' showcasing groundbreaking techniques like tape loops and reverse recording. 
